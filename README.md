@@ -1,6 +1,4 @@
-# akarithm
-Some C++ generic template algorithms I have implemented. They are by no mean the best.
+## Leetcode CPP
 
-# Note
-This library was originally from https://github.com/hbina/leetcode-solutions but I noticed that I have mostly been doing it in C++ and writing some generic algorithms that's not unique to solving Leetcode solutions.
-So here it is...
+Some of my solutions to the Leetcode's problem in C++.
+This library relies on my other repository, `akarithm`, which contain some generic libraries that are not specific to Leetcode.
