@@ -1,0 +1,6 @@
+[submodule "doctest"]
+	path = doctest
+	url = git@github.com:onqtam/doctest.git
+[submodule "akarithm"]
+	path = akarithm
+	url = git@github.com:hbina/akarithm.git
