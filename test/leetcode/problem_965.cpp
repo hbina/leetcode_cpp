@@ -2,6 +2,4 @@
 
 #include "leetcode/problem_965.hpp"
 
-TEST_CASE("problem_965")
-{
-}
+TEST_CASE("problem_965") {}

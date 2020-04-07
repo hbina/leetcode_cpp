@@ -5,56 +5,34 @@
 
 #include <set>
 
-TEST_CASE("problem_22")
-{
-    const int input = 4;
-    std::vector<std::string> expected = {
-        "(((())))",
-        "((()()))",
-        "((())())",
-        "((()))()",
-        "(()(()))",
-        "(()()())",
-        "(()())()",
-        "(())(())",
-        "(())()()",
-        "()((()))",
-        "()(()())",
-        "()(())()",
-        "()()(())",
-        "()()()()"};
-    const std::vector<std::string> result = leetcode::generateParenthesis(input);
-    // CHECK(leetcode::set_equality(expected, result));
+TEST_CASE("problem_22") {
+  const int input = 4;
+  std::vector<std::string> expected = {
+      "(((())))", "((()()))", "((())())", "((()))()", "(()(()))",
+      "(()()())", "(()())()", "(())(())", "(())()()", "()((()))",
+      "()(()())", "()(())()", "()()(())", "()()()()"};
+  const std::vector<std::string> result = leetcode::generateParenthesis(input);
+  // CHECK(akarithm::set_equality(expected, result));
 }
 
-TEST_CASE("problem_22")
-{
-    const int input = 3;
-    const std::vector<std::string> expected = {
-        "((()))",
-        "(()())",
-        "(())()",
-        "()(())",
-        "()()()"};
-    const std::vector<std::string> result = leetcode::generateParenthesis(input);
-    CHECK(leetcode::set_equality(expected, result));
+TEST_CASE("problem_22") {
+  const int input = 3;
+  const std::vector<std::string> expected = {"((()))", "(()())", "(())()",
+                                             "()(())", "()()()"};
+  const std::vector<std::string> result = leetcode::generateParenthesis(input);
+  CHECK(akarithm::set_equality(expected, result));
 }
 
-TEST_CASE("problem_22")
-{
-    const int input = 2;
-    const std::vector<std::string> expected = {
-        "()()",
-        "(())"};
-    const std::vector<std::string> result = leetcode::generateParenthesis(input);
-    CHECK(leetcode::set_equality(expected, result));
+TEST_CASE("problem_22") {
+  const int input = 2;
+  const std::vector<std::string> expected = {"()()", "(())"};
+  const std::vector<std::string> result = leetcode::generateParenthesis(input);
+  CHECK(akarithm::set_equality(expected, result));
 }
 
-TEST_CASE("problem_22")
-{
-    const int input = 1;
-    const std::vector<std::string> expected = {
-        "()"};
-    const std::vector<std::string> result = leetcode::generateParenthesis(input);
-    CHECK(leetcode::set_equality(expected, result));
+TEST_CASE("problem_22") {
+  const int input = 1;
+  const std::vector<std::string> expected = {"()"};
+  const std::vector<std::string> result = leetcode::generateParenthesis(input);
+  CHECK(akarithm::set_equality(expected, result));
 }

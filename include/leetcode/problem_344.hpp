@@ -1,14 +1,10 @@
 #pragma once
 
-#include <vector>
 #include <algorithm>
+#include <vector>
 
-namespace leetcode
-{
+namespace leetcode {
 
-void reverseString(std::vector<char> &s)
-{
-    std::reverse(s.begin(), s.end());
-}
+void reverseString(std::vector<char> &s) { std::reverse(s.begin(), s.end()); }
 
 } // namespace leetcode

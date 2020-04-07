@@ -2,17 +2,12 @@
 
 #include "leetcode/problem_700.hpp"
 
-TEST_CASE("problem_700")
-{
-    leetcode::TreeNode<> *expected =
-        new leetcode::TreeNode<>(2,
-                       new leetcode::TreeNode<>(1),
-                       new leetcode::TreeNode<>(3));
-    const leetcode::TreeNode<> *input =
-        new leetcode::TreeNode<>(4,
-                       expected,
-                       new leetcode::TreeNode<>(7));
-    const auto result = leetcode::searchBST(input, 2);
-    CHECK(expected == result);
-    delete input;
+TEST_CASE("problem_700") {
+  akarithm::TreeNode<> *expected = new akarithm::TreeNode<>(
+      2, new akarithm::TreeNode<>(1), new akarithm::TreeNode<>(3));
+  const akarithm::TreeNode<> *input =
+      new akarithm::TreeNode<>(4, expected, new akarithm::TreeNode<>(7));
+  const auto result = leetcode::searchBST(input, 2);
+  CHECK(expected == result);
+  delete input;
 }

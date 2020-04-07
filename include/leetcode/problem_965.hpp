@@ -2,42 +2,31 @@
 
 #include "data_structure/tree_node.hpp"
 
-namespace leetcode
-{
+namespace leetcode {
 
 template <typename ValueTy>
-static constexpr bool isUnivalTree(TreeNode<ValueTy> *root)
-{
-    if (root == nullptr)
-    {
-        return true;
-    }
+static constexpr auto isUnivalTree(akarithm::TreeNode<ValueTy> *root) -> bool {
+  if (root == nullptr) {
+    return true;
+  }
 
-    bool left_same = true;
-    bool right_same = true;
+  bool left_same = true;
+  bool right_same = true;
 
-    if (root->left != nullptr)
-    {
-        left_same =
-            (root->val == root->left->val) &
-            isUnivalTree(root->left);
-        if (!left_same)
-        {
-            return false;
-        }
+  if (root->left != nullptr) {
+    left_same = (root->val == root->left->val) & isUnivalTree(root->left);
+    if (!left_same) {
+      return false;
     }
+  }
 
-    if (root->right != nullptr)
-    {
-        right_same =
-            (root->val == root->right->val) &
-            isUnivalTree(root->right);
-        if (!right_same)
-        {
-            return false;
-        }
+  if (root->right != nullptr) {
+    right_same = (root->val == root->right->val) & isUnivalTree(root->right);
+    if (!right_same) {
+      return false;
     }
-    return left_same & right_same;
+  }
+  return left_same & right_same;
 }
 
 } // namespace leetcode
