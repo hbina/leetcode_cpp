@@ -2,7 +2,8 @@
 
 #include "leetcode/problem_371.hpp"
 
-TEST_CASE("problem_371") {
+TEST_CASE("problem_371")
+{
   CHECK(3 == leetcode::getSum(1, 2));
   CHECK(7 == leetcode::getSum(5, 2));
   CHECK(-1 == leetcode::getSum(-3, 2));

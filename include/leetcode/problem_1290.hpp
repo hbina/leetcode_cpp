@@ -4,8 +4,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-std::size_t getDecimalValue(const akarithm::ListNode<ValueTy> *head) {
+template<typename ValueTy>
+std::size_t
+getDecimalValue(const akarithm::ListNode<ValueTy>* head)
+{
   std::size_t result = 0;
   while (head) {
     result = result << 1;

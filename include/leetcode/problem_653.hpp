@@ -6,9 +6,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr auto findTarget(const akarithm::TreeNode<ValueTy> *root, int k)
-    -> bool {
+template<typename ValueTy>
+static constexpr auto
+findTarget(const akarithm::TreeNode<ValueTy>* root, int k) -> bool
+{
   akarithm::PreorderIterator pre_order = akarithm::PreorderIterator(root);
   akarithm::PostorderIterator post_order = akarithm::PostorderIterator(root);
   while (pre_order.hasNext() && post_order.hasNext()) {

@@ -8,14 +8,16 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-int numUniqueEmails(const std::vector<ValueTy> &emails) {
+template<typename ValueTy>
+int
+numUniqueEmails(const std::vector<ValueTy>& emails)
+{
   std::unordered_map<ValueTy, std::size_t> map;
-  for (const ValueTy &email : emails) {
+  for (const ValueTy& email : emails) {
     ValueTy temp;
     bool skipping_plus = false;
     bool skipping_dot = true;
-    for (const char &a : email) {
+    for (const char& a : email) {
       if (a == '+') {
         skipping_plus = true;
       } else if (a == '@') {

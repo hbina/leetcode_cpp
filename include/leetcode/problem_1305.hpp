@@ -10,11 +10,12 @@
 //  FIXME   ::  Need to look at tree iterator implementation
 namespace leetcode {
 
-template <typename ValueTy, typename BinaryPredicate>
+template<typename ValueTy, typename BinaryPredicate>
 static std::vector<ValueTy>
-getAllElements_If(const akarithm::TreeNode<ValueTy> *lhs,
-                  const akarithm::TreeNode<ValueTy> *rhs,
-                  const BinaryPredicate &pred) {
+getAllElements_If(const akarithm::TreeNode<ValueTy>* lhs,
+                  const akarithm::TreeNode<ValueTy>* rhs,
+                  const BinaryPredicate& pred)
+{
   std::vector<ValueTy> result;
 
   akarithm::BSTIterator lhs_iterator = akarithm::BSTIterator(lhs);
@@ -35,10 +36,11 @@ getAllElements_If(const akarithm::TreeNode<ValueTy> *lhs,
   return result;
 }
 
-template <typename ValueTy>
+template<typename ValueTy>
 static std::vector<ValueTy>
-getAllElements(const akarithm::TreeNode<ValueTy> *lhs,
-               const akarithm::TreeNode<ValueTy> *rhs) {
+getAllElements(const akarithm::TreeNode<ValueTy>* lhs,
+               const akarithm::TreeNode<ValueTy>* rhs)
+{
   return getAllElements_If(lhs, rhs, std::less{});
 }
 

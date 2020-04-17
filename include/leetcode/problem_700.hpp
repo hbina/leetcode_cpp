@@ -6,13 +6,15 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr auto searchBST(const akarithm::TreeNode<ValueTy> *root,
-                                const ValueTy &val)
-    -> const akarithm::TreeNode<ValueTy> * {
+template<typename ValueTy>
+static constexpr auto
+searchBST(const akarithm::TreeNode<ValueTy>* root, const ValueTy& val)
+  -> const akarithm::TreeNode<ValueTy>*
+{
   return akarithm::bst_search(
-      root, [&](const ValueTy &node) -> bool { return node == val; },
-      [&](const ValueTy &node) -> bool { return node < val; });
+    root,
+    [&](const ValueTy& node) -> bool { return node == val; },
+    [&](const ValueTy& node) -> bool { return node < val; });
 }
 
 } // namespace leetcode

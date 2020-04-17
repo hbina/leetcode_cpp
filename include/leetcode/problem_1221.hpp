@@ -9,11 +9,13 @@ namespace leetcode {
 
 //  TODO    ::  Narrow down this template to only accept types that implements
 //  std::char_traits
-template <typename CounterTy = std::size_t, typename StringTy = std::string>
-static constexpr auto balancedStringSplit(const StringTy &s) -> CounterTy {
+template<typename CounterTy = std::size_t, typename StringTy = std::string>
+static constexpr auto
+balancedStringSplit(const StringTy& s) -> CounterTy
+{
   CounterTy global_counter{};
   int counter = 0;
-  for (const auto &x : s) {
+  for (const auto& x : s) {
     if (x == 'L') {
       counter--;
     } else if (x == 'R') {

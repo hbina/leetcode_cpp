@@ -7,13 +7,14 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr akarithm::NodeNext<ValueTy> *
-connect(akarithm::NodeNext<ValueTy> *root) {
+template<typename ValueTy>
+static constexpr akarithm::NodeNext<ValueTy>*
+connect(akarithm::NodeNext<ValueTy>* root)
+{
   if (!root)
     return nullptr;
 
-  akarithm::NodeNext<ValueTy> *nextmost = root->next;
+  akarithm::NodeNext<ValueTy>* nextmost = root->next;
   while (nextmost && (!nextmost->left && !nextmost->right) && nextmost->next) {
     nextmost = nextmost->next;
   }

@@ -8,9 +8,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
+template<typename ValueTy>
 static constexpr std::vector<ValueTy>
-postorderTraversal(const akarithm::TreeNode<ValueTy> *root) {
+postorderTraversal(const akarithm::TreeNode<ValueTy>* root)
+{
   std::vector<ValueTy> AB, A, B;
   if (root) {
     if (root->left) {

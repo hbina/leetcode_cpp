@@ -4,8 +4,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr auto isUnivalTree(akarithm::TreeNode<ValueTy> *root) -> bool {
+template<typename ValueTy>
+static constexpr auto
+isUnivalTree(akarithm::TreeNode<ValueTy>* root) -> bool
+{
   if (root == nullptr) {
     return true;
   }

@@ -9,10 +9,11 @@
 
 namespace leetcode {
 
-template <typename IntTy,
-          typename ResultTy = typename std::vector<std::vector<IntTy>>>
-static constexpr auto fourSum(const std::vector<IntTy> &nums,
-                              const IntTy &target) -> ResultTy {
+template<typename IntTy,
+         typename ResultTy = typename std::vector<std::vector<IntTy>>>
+static constexpr auto
+fourSum(const std::vector<IntTy>& nums, const IntTy& target) -> ResultTy
+{
   return {};
 }
 

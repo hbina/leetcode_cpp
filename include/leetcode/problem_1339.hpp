@@ -5,10 +5,11 @@
 
 namespace leetcode {
 
-template <typename IntTy = int>
-static constexpr auto maxProduct(const akarithm::TreeNode<IntTy> *root)
-    -> IntTy {
-  constexpr auto tree_accumulator = [](const akarithm::TreeNode<IntTy> *root,
+template<typename IntTy = int>
+static constexpr auto
+maxProduct(const akarithm::TreeNode<IntTy>* root) -> IntTy
+{
+  constexpr auto tree_accumulator = [](const akarithm::TreeNode<IntTy>* root,
                                        IntTy acc = {}) -> IntTy {
     akarithm::PreorderIterator iter = akarithm::PreorderIterator(root);
     while (iter.hasNext()) {

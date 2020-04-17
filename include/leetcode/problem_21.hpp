@@ -7,33 +7,35 @@
 namespace leetcode {
 
 // Can be generalized further
-template <typename ValueTy>
-static constexpr std::tuple<akarithm::ListNode<ValueTy> *,
-                            akarithm::ListNode<ValueTy> *,
-                            akarithm::ListNode<ValueTy> *>
-advanceZip(akarithm::ListNode<ValueTy> *lhs, akarithm::ListNode<ValueTy> *rhs) {
+template<typename ValueTy>
+static constexpr std::tuple<akarithm::ListNode<ValueTy>*,
+                            akarithm::ListNode<ValueTy>*,
+                            akarithm::ListNode<ValueTy>*>
+advanceZip(akarithm::ListNode<ValueTy>* lhs, akarithm::ListNode<ValueTy>* rhs)
+{
   if (lhs && rhs) {
     if (lhs->val < rhs->val) {
-      return {lhs, lhs->next, rhs};
+      return { lhs, lhs->next, rhs };
     } else {
-      return {rhs, lhs, rhs->next};
+      return { rhs, lhs, rhs->next };
     }
   } else if (lhs) {
-    return {lhs, lhs->next, nullptr};
+    return { lhs, lhs->next, nullptr };
   } else if (rhs) {
-    return {rhs, nullptr, rhs->next};
+    return { rhs, nullptr, rhs->next };
   } else {
-    return {nullptr, nullptr, nullptr};
+    return { nullptr, nullptr, nullptr };
   }
 }
 
-template <typename ValueTy>
-static constexpr akarithm::ListNode<ValueTy> *
-mergeTwoLists(akarithm::ListNode<ValueTy> *lhs,
-              akarithm::ListNode<ValueTy> *rhs) {
+template<typename ValueTy>
+static constexpr akarithm::ListNode<ValueTy>*
+mergeTwoLists(akarithm::ListNode<ValueTy>* lhs,
+              akarithm::ListNode<ValueTy>* rhs)
+{
   if (lhs && rhs) {
     auto [root, lhs_iter, rhs_iter] = advanceZip(lhs, rhs);
-    akarithm::ListNode<ValueTy> *iter = root;
+    akarithm::ListNode<ValueTy>* iter = root;
     while (lhs_iter || rhs_iter) {
       auto [iter_next, lhs_next, rhs_next] = advanceZip(lhs_iter, rhs_iter);
       iter->next = iter_next;

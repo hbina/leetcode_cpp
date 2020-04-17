@@ -4,9 +4,11 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-bool isMirror(const akarithm::TreeNode<ValueTy> *lhs,
-              const akarithm::TreeNode<ValueTy> *rhs) {
+template<typename ValueTy>
+bool
+isMirror(const akarithm::TreeNode<ValueTy>* lhs,
+         const akarithm::TreeNode<ValueTy>* rhs)
+{
   if (lhs == nullptr && rhs == nullptr)
     return true;
   if (lhs == nullptr || rhs == nullptr)
@@ -15,8 +17,10 @@ bool isMirror(const akarithm::TreeNode<ValueTy> *lhs,
          isMirror(lhs->left, rhs->right);
 }
 
-template <typename ValueTy>
-bool isSymmetric(const akarithm::TreeNode<ValueTy> *root) {
+template<typename ValueTy>
+bool
+isSymmetric(const akarithm::TreeNode<ValueTy>* root)
+{
   return isMirror(root, root);
 }
 

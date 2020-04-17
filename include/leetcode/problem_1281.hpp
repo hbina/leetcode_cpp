@@ -6,8 +6,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr ValueTy subtractProductAndSum(const ValueTy &input) {
+template<typename ValueTy>
+static constexpr ValueTy
+subtractProductAndSum(const ValueTy& input)
+{
   ValueTy n = input;
   std::vector<ValueTy> collection;
   while (n) {
@@ -16,7 +18,9 @@ static constexpr ValueTy subtractProductAndSum(const ValueTy &input) {
     n /= 10;
   }
 
-  return std::accumulate(collection.begin(), collection.end(), 1,
+  return std::accumulate(collection.begin(),
+                         collection.end(),
+                         1,
                          std::multiplies<ValueTy>()) -
          std::accumulate(collection.begin(), collection.end(), 0);
 }

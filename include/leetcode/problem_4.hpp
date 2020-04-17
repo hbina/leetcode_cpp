@@ -5,10 +5,11 @@
 #include <vector>
 
 namespace leetcode {
-template <typename ValueTy>
+template<typename ValueTy>
 static constexpr double
-findMedianSortedArrays_basic(const std::vector<ValueTy> &nums1,
-                             const std::vector<ValueTy> &nums2) {
+findMedianSortedArrays_basic(const std::vector<ValueTy>& nums1,
+                             const std::vector<ValueTy>& nums2)
+{
   std::vector<ValueTy> collection;
   collection.reserve(nums1.size() + nums2.size());
   collection.insert(collection.end(), nums1.begin(), nums1.end());
@@ -23,10 +24,11 @@ findMedianSortedArrays_basic(const std::vector<ValueTy> &nums1,
   }
 }
 
-template <typename ValueTy>
+template<typename ValueTy>
 static constexpr double
-findMedianSortedArrays_search(const std::vector<ValueTy> &nums1,
-                              const std::vector<ValueTy> &nums2) {
+findMedianSortedArrays_search(const std::vector<ValueTy>& nums1,
+                              const std::vector<ValueTy>& nums2)
+{
   //  TODO    ::  There are better ways to do this than to make a heap
   //  allocation
   //              of 2 possibly large vectors. Most of the allocations are

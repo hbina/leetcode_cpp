@@ -17,10 +17,13 @@ namespace leetcode {
 //  FIXME   ::  Must verify the size of data because we know the relationship
 //              between the depth and the number of nodes that must be in it.
 //              This is counting the NULL too.
-template <typename ValueTy> class Codec {
+template<typename ValueTy>
+class Codec
+{
 
 private:
-  static akarithm::TreeNode<ValueTy> *parse_data(const std::string &iter) {
+  static akarithm::TreeNode<ValueTy>* parse_data(const std::string& iter)
+  {
     if (akarithm::is_number(iter)) {
       return new akarithm::TreeNode<ValueTy>(std::stoi(iter));
     } else {
@@ -31,15 +34,16 @@ private:
 public:
   //  Encodes a tree to a single string.
   //  TODO    ::  Rework this mess...
-  static std::string serialize(const akarithm::TreeNode<ValueTy> *root) {
+  static std::string serialize(const akarithm::TreeNode<ValueTy>* root)
+  {
     if (!root) {
       return "[]";
     }
     std::string result = "[";
-    std::vector<const akarithm::TreeNode<ValueTy> *> layers = {root};
+    std::vector<const akarithm::TreeNode<ValueTy>*> layers = { root };
     while (!layers.empty()) {
-      std::vector<const akarithm::TreeNode<ValueTy> *> next_layers;
-      for (const akarithm::TreeNode<ValueTy> *node : layers) {
+      std::vector<const akarithm::TreeNode<ValueTy>*> next_layers;
+      for (const akarithm::TreeNode<ValueTy>* node : layers) {
         result += std::to_string(node->val) + ",";
 
         if (node->left) {
@@ -68,18 +72,20 @@ public:
   //                  1
   //          2               null
   //      3       4       null    null
-  static akarithm::TreeNode<ValueTy> *deserialize(const std::string &data) {
+  static akarithm::TreeNode<ValueTy>* deserialize(const std::string& data)
+  {
     std::string skip_bracket = data.substr(1, data.length() - 2);
     std::string delimiter = ",";
     std::vector<std::string> deflatten_data =
-        util::string::split<std::vector<std::string>>(skip_bracket, delimiter);
-    std::vector<akarithm::TreeNode<ValueTy> *> nodes;
+      util::string::split<std::vector<std::string>>(skip_bracket, delimiter);
+    std::vector<akarithm::TreeNode<ValueTy>*> nodes;
     std::transform(
-        deflatten_data.cbegin(), deflatten_data.cend(),
-        std::back_inserter(nodes),
-        [&](const std::string &data) -> akarithm::TreeNode<ValueTy> * {
-          return Codec::parse_data(data);
-        });
+      deflatten_data.cbegin(),
+      deflatten_data.cend(),
+      std::back_inserter(nodes),
+      [&](const std::string& data) -> akarithm::TreeNode<ValueTy>* {
+        return Codec::parse_data(data);
+      });
     std::size_t counter = 0;
     std::size_t left_child = 2 * counter + 1;
     std::size_t right_child = 2 * counter + 2;

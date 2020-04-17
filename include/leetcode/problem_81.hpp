@@ -5,10 +5,12 @@
 
 namespace leetcode {
 
-template <typename Iterable, typename ValueTy = typename std::iterator_traits<
-                                 typename Iterable::iterator>::value_type>
-static constexpr auto search_TypeTwo(Iterable &nums, const ValueTy &target)
-    -> bool {
+template<typename Iterable,
+         typename ValueTy = typename std::iterator_traits<
+           typename Iterable::iterator>::value_type>
+static constexpr auto
+search_TypeTwo(Iterable& nums, const ValueTy& target) -> bool
+{
   if (nums.empty()) {
     return false;
   }

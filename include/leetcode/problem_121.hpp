@@ -5,25 +5,30 @@
 
 namespace leetcode {
 
-template <typename Iterable, typename ValueTy = typename std::iterator_traits<
-                                 typename Iterable::iterator>::value_type>
-static constexpr ValueTy maxProfit_One(const Iterable &prices) {
+template<typename Iterable,
+         typename ValueTy = typename std::iterator_traits<
+           typename Iterable::iterator>::value_type>
+static constexpr ValueTy
+maxProfit_One(const Iterable& prices)
+{
   ValueTy global_profit = ValueTy{};
 
   // Find the first profit that we can make.
   // We also finds our first global_min as a result.
   auto range = std::is_sorted_until(
-      std::cbegin(prices), std::cend(prices),
-      [](const auto &lhs, const auto &rhs) -> bool { return lhs < rhs; });
+    std::cbegin(prices),
+    std::cend(prices),
+    [](const auto& lhs, const auto& rhs) -> bool { return lhs < rhs; });
   auto [global_min, global_max] =
-      std::minmax_element(std::cbegin(prices), range);
+    std::minmax_element(std::cbegin(prices), range);
   if (global_min == std::cend(prices) || global_max == std::cend(prices))
     return 0;
   global_profit = *global_max - *global_min;
   while (range != std::cend(prices)) {
     auto next_max = std::is_sorted_until(
-        range, std::cend(prices),
-        [](const auto &lhs, const auto &rhs) -> bool { return lhs < rhs; });
+      range, std::cend(prices), [](const auto& lhs, const auto& rhs) -> bool {
+        return lhs < rhs;
+      });
     auto [local_min, local_max] = std::minmax_element(range, next_max);
 
     // If we reset the global min, we must reset global max too

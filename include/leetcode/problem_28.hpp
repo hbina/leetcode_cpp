@@ -4,18 +4,21 @@
 
 namespace leetcode {
 
-template <typename Iterable>
-static constexpr int strStr(const Iterable &haystack, const Iterable &needle) {
+template<typename Iterable>
+static constexpr int
+strStr(const Iterable& haystack, const Iterable& needle)
+{
   if (needle.size() == 0) {
     return 0;
   }
   using IteratorType = typename Iterable::const_iterator;
-  const IteratorType result =
-      akarithm::find_range(std::cbegin(haystack), std::cend(haystack),
-                           std::cbegin(needle), std::cend(needle));
+  const IteratorType result = akarithm::find_range(std::cbegin(haystack),
+                                                   std::cend(haystack),
+                                                   std::cbegin(needle),
+                                                   std::cend(needle));
   return result == std::cend(haystack)
-             ? -1
-             : static_cast<int>(std::distance(std::cbegin(haystack), result));
+           ? -1
+           : static_cast<int>(std::distance(std::cbegin(haystack), result));
 }
 
 } // namespace leetcode

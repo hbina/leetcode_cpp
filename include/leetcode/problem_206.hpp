@@ -4,16 +4,17 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr akarithm::ListNode<ValueTy> *
-reverseList_iterative(akarithm::ListNode<ValueTy> *head) {
+template<typename ValueTy>
+static constexpr akarithm::ListNode<ValueTy>*
+reverseList_iterative(akarithm::ListNode<ValueTy>* head)
+{
   if (!head) {
     return nullptr;
   }
 
-  akarithm::ListNode<ValueTy> *pointer_before = nullptr;
-  akarithm::ListNode<ValueTy> *pointer_current = head;
-  akarithm::ListNode<ValueTy> *pointer_after = head->next;
+  akarithm::ListNode<ValueTy>* pointer_before = nullptr;
+  akarithm::ListNode<ValueTy>* pointer_current = head;
+  akarithm::ListNode<ValueTy>* pointer_after = head->next;
 
   while (pointer_after) {
     pointer_current->next = pointer_before;
@@ -27,25 +28,28 @@ reverseList_iterative(akarithm::ListNode<ValueTy> *head) {
   return pointer_current;
 }
 
-template <typename ValueTy>
-static constexpr akarithm::ListNode<ValueTy> *
-reverseList_recursive_helper(akarithm::ListNode<ValueTy> *head,
-                             akarithm::ListNode<ValueTy> *next) {
+template<typename ValueTy>
+static constexpr akarithm::ListNode<ValueTy>*
+reverseList_recursive_helper(akarithm::ListNode<ValueTy>* head,
+                             akarithm::ListNode<ValueTy>* next)
+{
   // Means that we are at the end.
   if (!next) {
     return head;
   } else {
-    akarithm::ListNode<ValueTy> *tmp = next->next;
+    akarithm::ListNode<ValueTy>* tmp = next->next;
     next->next = head;
     return reverseList_recursive_helper(next, tmp);
   }
 }
 
-template <typename ValueTy>
-static constexpr auto reverseList_recursive(akarithm::ListNode<ValueTy> *head)
-    -> akarithm::ListNode<ValueTy> * {
+template<typename ValueTy>
+static constexpr auto
+reverseList_recursive(akarithm::ListNode<ValueTy>* head)
+  -> akarithm::ListNode<ValueTy>*
+{
   if (head) {
-    akarithm::ListNode<ValueTy> *tmp = head->next;
+    akarithm::ListNode<ValueTy>* tmp = head->next;
     head->next = nullptr;
     return reverseList_recursive_helper(head, tmp);
   } else {

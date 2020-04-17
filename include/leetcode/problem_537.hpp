@@ -4,8 +4,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-bool hasPathSum(const akarithm::TreeNode<ValueTy> *root, int sum) {
+template<typename ValueTy>
+bool
+hasPathSum(const akarithm::TreeNode<ValueTy>* root, int sum)
+{
   if (root == nullptr) {
     return false;
   } else if (!root->left && !root->right && sum == root->val) {

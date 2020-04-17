@@ -5,8 +5,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr ValueTy heightChecker(const std::vector<ValueTy> &heights) {
+template<typename ValueTy>
+static constexpr ValueTy
+heightChecker(const std::vector<ValueTy>& heights)
+{
   std::vector<ValueTy> copy = heights;
   std::sort(copy.begin(), copy.end());
   ValueTy counter = 0;
@@ -17,9 +19,10 @@ static constexpr ValueTy heightChecker(const std::vector<ValueTy> &heights) {
   return counter;
 }
 
-template <typename ValueTy>
+template<typename ValueTy>
 static constexpr std::size_t
-heightChecker_zip(const std::vector<ValueTy> &heights) {
+heightChecker_zip(const std::vector<ValueTy>& heights)
+{
   // FIXME :: There must be a more natural construct to zip through 2
   // iterators...cmon <algorithm>
   std::vector<ValueTy> copy = heights;

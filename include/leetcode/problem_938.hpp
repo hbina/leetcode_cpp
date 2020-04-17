@@ -4,10 +4,12 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
+template<typename ValueTy>
 static constexpr int
-rangeSumBST_recursion(const akarithm::TreeNode<ValueTy> *root, const ValueTy &L,
-                      const ValueTy &R) {
+rangeSumBST_recursion(const akarithm::TreeNode<ValueTy>* root,
+                      const ValueTy& L,
+                      const ValueTy& R)
+{
   if (root == nullptr) {
     return 0;
   } else if (root->val < L) {

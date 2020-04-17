@@ -5,6 +5,10 @@
 
 namespace leetcode {
 
-void reverseString(std::vector<char> &s) { std::reverse(s.begin(), s.end()); }
+void
+reverseString(std::vector<char>& s)
+{
+  std::reverse(s.begin(), s.end());
+}
 
 } // namespace leetcode

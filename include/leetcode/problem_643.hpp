@@ -6,9 +6,10 @@
 
 namespace leetcode {
 
-template <typename ValueTy>
-static constexpr double findMaxAverage(const std::vector<ValueTy> &nums,
-                                       const std::size_t &k) {
+template<typename ValueTy>
+static constexpr double
+findMaxAverage(const std::vector<ValueTy>& nums, const std::size_t& k)
+{
   double sum_cache = 0.0;
 
   if (nums.empty()) {
@@ -17,7 +18,7 @@ static constexpr double findMaxAverage(const std::vector<ValueTy> &nums,
 
   if (nums.size() < k) {
     ValueTy sum = 0;
-    for (const auto &a : nums) {
+    for (const auto& a : nums) {
       sum += a;
     }
     return static_cast<double>(sum) / static_cast<double>(nums.size());

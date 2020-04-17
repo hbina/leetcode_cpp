@@ -3,7 +3,9 @@
 
 namespace leetcode {
 
-std::string reverseWords(const std::string &input) {
+std::string
+reverseWords(const std::string& input)
+{
   std::string result;
   std::vector<std::string> collector;
   std::string tmp;

@@ -4,8 +4,10 @@
 
 namespace leetcode {
 
-template <typename Iterable, typename ValueTy = int>
-static constexpr ValueTy romanToInt(const Iterable &s) {
+template<typename Iterable, typename ValueTy = int>
+static constexpr ValueTy
+romanToInt(const Iterable& s)
+{
   ValueTy sum = 0;
   std::map<char, ValueTy> nums;
 

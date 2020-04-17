@@ -7,8 +7,9 @@
 //              We are only incrementing our guess +1 each time. We need to have
 //              a better search algorithm.
 
-TEST_CASE("problem_1283") {
-  const std::vector<int> input_1 = {1, 2, 5, 9};
+TEST_CASE("problem_1283")
+{
+  const std::vector<int> input_1 = { 1, 2, 5, 9 };
   const int input_2 = 6;
   const int expected = 5;
   CHECK(expected == leetcode::smallestDivisor_naive(input_1, input_2));
@@ -16,15 +17,17 @@ TEST_CASE("problem_1283") {
   // CHECK(expected == smallestDivisor_binarySearchGuess(input_1, input_2));
 }
 
-TEST_CASE("problem_1283") {
-  const std::vector<int> input_1 = {2, 3, 5, 7, 11};
+TEST_CASE("problem_1283")
+{
+  const std::vector<int> input_1 = { 2, 3, 5, 7, 11 };
   const int input_2 = 11;
   const int expected = 3;
   CHECK(expected == leetcode::smallestDivisor_naive(input_1, input_2));
   CHECK(expected == leetcode::smallestDivisor_guessFirst(input_1, input_2));
 }
 
-TEST_CASE("problem_1283 -- long input") {
+TEST_CASE("problem_1283 -- long input")
+{
   // const std::vector<int> input_1 = {18607, 661054, 599919, 436792, 219456,
   // 994855, 781647, 139499, 294811, 943168, 369056, 837788, 25946, 615498,
   // 345479, 921763, 167979, 461852, 567900, 940420, 836054, 496071, 851495,
@@ -141,8 +144,9 @@ TEST_CASE("problem_1283 -- long input") {
   // CHECK(expected == smallestDivisor_guessFirst(input_1, input_2));
 }
 
-TEST_CASE("problem_1283 -- large treshold") {
-  const std::vector<int> input_1 = {1, 2, 3};
+TEST_CASE("problem_1283 -- large treshold")
+{
+  const std::vector<int> input_1 = { 1, 2, 3 };
   const int input_2 = 1000000;
   const int expected = 1;
   CHECK(expected == leetcode::smallestDivisor_naive(input_1, input_2));
