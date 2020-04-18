@@ -69,8 +69,8 @@ TEST_CASE("april 2020 day 16 8")
 
 TEST_CASE("april 2020 day 16 9")
 {
-  const std::string input_1 = "((*)(*))((*";
-  const bool expected = true;
+  const std::string input_1 = "((*)(*))(((*";
+  const bool expected = false;
   const bool result = april2020::checkValidString(input_1);
   CHECK(expected == result);
 }

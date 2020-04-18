@@ -14,19 +14,20 @@ checkValidString(const std::string& s) -> bool
   for (auto x : s) {
     switch (x) {
       case '(': {
-        counter++;
-        break;
-      }
-      case ')': {
-        if (counter > 0) {
-          counter--;
-        } else {
-          if (storage > 0) {
-            storage--;
+        if (counter < 0) {
+          if (storage + counter > 0) {
+            storage += counter;
+            counter = 1;
           } else {
             return false;
           }
+        } else {
+          counter++;
         }
+        break;
+      }
+      case ')': {
+        counter--;
         break;
       }
       case '*': {
