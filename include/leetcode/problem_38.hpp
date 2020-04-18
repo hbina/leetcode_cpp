@@ -1,6 +1,6 @@
 #pragma once
 
-#include "util/generic/group_by.hpp"
+#include "util/string/group_by.hpp"
 
 #include <algorithm>
 #include <string>
@@ -9,16 +9,16 @@
 //  TODO    ::  Reimplement this using for-loops instead of recursion
 namespace leetcode {
 
-template<typename NumType, typename OutputType = std::string>
-static constexpr auto
-countAndSay(const NumType& n) -> OutputType
+template<typename NumType>
+static auto
+countAndSay(const NumType& n) -> std::string
 {
-  OutputType result = "1";
+  std::string result = "1";
   for (auto a = 1; a < n; a++) {
-    const auto grouped = akarithm::group_by<OutputType>(
-      result.cbegin(),
-      result.cend(),
-      [](const OutputType& lhs, const auto& rhs) -> bool {
+    const auto grouped = akarithm::string::group_by(
+      std::cbegin(result),
+      std::cend(result),
+      [](const std::string& lhs, const auto& rhs) -> bool {
         return lhs.back() == rhs;
       });
     const auto transformed = std::accumulate(

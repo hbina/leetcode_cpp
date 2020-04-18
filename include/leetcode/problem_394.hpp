@@ -26,7 +26,7 @@ decodeString(const std::string& s)
           tmp += chars.top().second;
         }
         if (chars.size() == 1) {
-          result += std::move(tmp);
+          result += tmp;
           chars.pop();
         } else {
           chars.pop();

@@ -58,7 +58,7 @@ public:
           result += "null,";
         }
       }
-      layers = std::move(next_layers);
+      layers = next_layers;
     }
 
     // Replace the last char ',' with ']'

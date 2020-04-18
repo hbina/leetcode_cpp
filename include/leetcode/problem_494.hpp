@@ -59,7 +59,7 @@ findTargetSumWays_memoization(const Iterable& nums, const ValueTy& goal_value)
       local_dp[v.first + num] = local_dp[v.first + num] + dp[v.first];
       local_dp[v.first - num] = local_dp[v.first - num] + dp[v.first];
     }
-    dp = std::move(local_dp);
+    dp = local_dp;
   }
   return dp[goal_value];
 }

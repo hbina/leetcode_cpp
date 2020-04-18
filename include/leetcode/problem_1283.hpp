@@ -27,7 +27,7 @@ accumulateResult(const std::vector<ValueTy>& nums, const ValueTy& divisor)
                          nums.cend(),
                          0,
                          [&](ValueTy sum, const ValueTy& x) -> ValueTy {
-                           return std::move(sum) + specialDivision(x, divisor);
+                           return sum + specialDivision(x, divisor);
                          });
 }
 
