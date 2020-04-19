@@ -1,35 +1,43 @@
 #pragma once
 
+#include <iterator>
 #include <numeric>
-#include <string>
+#include <stack>
 #include <vector>
 
 namespace april2020 {
 
-static auto
-checkValidString(const std::string& s) -> bool
+template<typename IterTy>
+static constexpr auto
+checkValidString(IterTy begin, IterTy end) -> bool
 {
-  // Optimize later to use std::array
-  std::vector<std::vector<int>> dp = { { 0 } };
+  using IdxTy = typename std::iterator_traits<IterTy>::difference_type;
+  
+  std::stack<IdxTy> opens;
+  std::stack<IdxTy> stars;
 
-  for (auto c : s) {
-    dp.emplace_back(dp.back());
+  // Run forward and clear as much as we can.
+  auto len = std::distance(begin, end);
+  for (IdxTy i = 0; i != len; i++) {
+    auto c = *begin;
+    begin = std::next(begin);
     switch (c) {
       case '(': {
-        for (auto d : dp.back()) {
-          d++;
-        }
+        opens.push(i);
         break;
       }
       case ')': {
-        for (auto d : dp.back()) {
-          d--;
+        if (!opens.empty()) {
+          opens.pop();
+        } else if (!stars.empty()) {
+          stars.pop();
+        } else {
+          return false;
         }
         break;
       }
       case '*': {
-        dp.back().push_back(dp.back().front() - 1);
-        dp.back().push_back(dp.back().back() + 1);
+        stars.push(i);
         break;
       }
       default: {
@@ -37,10 +45,15 @@ checkValidString(const std::string& s) -> bool
       }
     }
   }
-  return std::accumulate(
-    std::cbegin(dp.back()),
-    std::cend(dp.back()),
-    false,
-    [](bool acc, const int& x) -> bool { return acc || x == 0; });
+
+  // Clean up any openings left using stars.
+  while (!opens.empty() && !stars.empty()) {
+    auto top = stars.top();
+    stars.pop();
+    if (top > opens.top()) {
+      opens.pop();
+    }
+  }
+  return opens.empty();
 }
 }
