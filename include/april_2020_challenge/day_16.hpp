@@ -1,37 +1,35 @@
 #pragma once
 
-#include "util/string/group_by.hpp"
-
+#include <numeric>
 #include <string>
+#include <vector>
 
 namespace april2020 {
 
 static auto
 checkValidString(const std::string& s) -> bool
 {
-  int storage = 0;
-  int counter = 0;
-  for (auto x : s) {
-    switch (x) {
+  // Optimize later to use std::array
+  std::vector<std::vector<int>> dp = { { 0 } };
+
+  for (auto c : s) {
+    dp.emplace_back(dp.back());
+    switch (c) {
       case '(': {
-        if (counter < 0) {
-          if (storage + counter > 0) {
-            storage += counter;
-            counter = 1;
-          } else {
-            return false;
-          }
-        } else {
-          counter++;
+        for (auto d : dp.back()) {
+          d++;
         }
         break;
       }
       case ')': {
-        counter--;
+        for (auto d : dp.back()) {
+          d--;
+        }
         break;
       }
       case '*': {
-        storage++;
+        dp.back().push_back(dp.back().front() - 1);
+        dp.back().push_back(dp.back().back() + 1);
         break;
       }
       default: {
@@ -39,6 +37,10 @@ checkValidString(const std::string& s) -> bool
       }
     }
   }
-  return counter == 0;
+  return std::accumulate(
+    std::cbegin(dp.back()),
+    std::cend(dp.back()),
+    false,
+    [](bool acc, const int& x) -> bool { return acc || x == 0; });
 }
 }
