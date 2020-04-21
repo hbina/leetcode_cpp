@@ -6,28 +6,27 @@
 
 namespace leetcode {
 
+template<typename IterTy>
 static auto
-reformat(const std::string& s) -> std::string
+reformat(IterTy begin, IterTy end) -> std::string
 {
   // Prelude
   using CharTy = typename std::string::value_type;
   auto next_characters = [&](const std::string::const_iterator characters) {
-    return std::find_if(characters, std::cend(s), [](const CharTy& x) -> bool {
+    return std::find_if(characters, end, [](const CharTy& x) -> bool {
       return std::isupper(x) || std::islower(x);
     });
   };
   auto next_digits = [&](const std::string::const_iterator digits) {
-    return std::find_if(digits, std::cend(s), [](const CharTy& x) -> bool {
-      return std::isdigit(x);
-    });
+    return std::find_if(
+      digits, end, [](const CharTy& x) -> bool { return std::isdigit(x); });
   };
 
   // Count the frequencies
-  auto digit_count =
-    std::count_if(std::cbegin(s), std::cend(s), [](const CharTy& x) -> bool {
-      return std::isdigit(x);
-    });
-  auto character_count = s.size() - digit_count;
+  auto length = std::distance(begin, end);
+  auto digit_count = std::count_if(
+    begin, end, [](const CharTy& x) -> bool { return std::isdigit(x); });
+  auto character_count = length - digit_count;
 
   // Check if the difference is larger than 1, thus impossible.
   if ((digit_count > character_count && digit_count - character_count > 1) ||
@@ -35,16 +34,16 @@ reformat(const std::string& s) -> std::string
     return "";
   } else {
     std::string result;
-    result.reserve(s.size());
+    result.reserve(length);
 
-    auto characters = next_characters(std::cbegin(s));
-    auto digits = next_digits(std::cbegin(s));
+    auto characters = next_characters(begin);
+    auto digits = next_digits(begin);
 
     if (digit_count < character_count) {
       // Put character at the front
       result.push_back(*characters);
       characters = next_characters(std::next(characters));
-      while (digits != std::cend(s)) {
+      while (digits != end) {
         result.push_back(*digits);
         result.push_back(*characters);
         characters = next_characters(std::next(characters));
@@ -52,7 +51,7 @@ reformat(const std::string& s) -> std::string
       }
     } else if (digit_count > character_count) {
       // Put digit at the end
-      while (characters != std::cend(s)) {
+      while (characters != end) {
         result.push_back(*digits);
         result.push_back(*characters);
         characters = next_characters(std::next(characters));
@@ -61,7 +60,7 @@ reformat(const std::string& s) -> std::string
       result.push_back(*digits);
     } else {
       // March normally
-      while (digits != std::cend(s) && characters != std::cend(s)) {
+      while (digits != end && characters != end) {
         result.push_back(*digits);
         result.push_back(*characters);
         characters = next_characters(std::next(characters));
