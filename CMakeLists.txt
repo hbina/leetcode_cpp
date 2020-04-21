@@ -100,6 +100,7 @@ add_executable(
   test/april_2020_challenge/day_2.cpp
   test/april_2020_challenge/day_3.cpp
   test/april_2020_challenge/day_4.cpp
+  test/april_2020_challenge/day_5.cpp
   test/april_2020_challenge/day_8.cpp
   test/april_2020_challenge/day_16.cpp)
 
