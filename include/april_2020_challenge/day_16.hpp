@@ -12,7 +12,7 @@ static constexpr auto
 checkValidString(IterTy begin, IterTy end) -> bool
 {
   using IdxTy = typename std::iterator_traits<IterTy>::difference_type;
-  
+
   std::stack<IdxTy> opens;
   std::stack<IdxTy> stars;
 
