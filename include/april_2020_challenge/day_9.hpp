@@ -1,34 +1,39 @@
 #pragma once
 
+#include <iostream>
 #include <iterator>
+#include <stack>
 
 namespace april2020 {
 
+// There is a O(1) memory solution using a reverse iterator but its quite tricky
+// to write.
 template<typename IterTy>
 static constexpr auto
 backspaceCompare(IterTy beginS, IterTy endS, IterTy beginT, IterTy endT) -> bool
 {
-  using RiterTy = decltype(std::make_reverse_iterator(beginS));
-  RiterTy rbeginS = std::make_reverse_iterator(endS);
-  RiterTy rendS = std::make_reverse_iterator(beginS);
-  RiterTy rbeginT = std::make_reverse_iterator(endT);
-  RiterTy rendT = std::make_reverse_iterator(beginT);
+  using ValueTy = typename std::iterator_traits<IterTy>::value_type;
 
-  auto find_next = [](RiterTy begin, RiterTy end) -> RiterTy {
-    auto pound_counter = 0;
-    while (begin != end && *begin == '#') {
-      pound_counter++;
-    }
-    while (begin != end && pound_counter != 0) {
-      pound_counter--;
+  auto create_stack = [](IterTy begin, IterTy end) {
+    std::stack<ValueTy> words;
+    while (begin != end) {
+      switch (*begin) {
+        case '#': {
+          if (!words.empty())
+            words.pop();
+          break;
+        }
+        default: {
+          words.push(*begin);
+          break;
+        }
+      }
       begin = std::next(begin);
     }
-    return begin;
+    return words;
   };
 
-  while (rbeginS != rendS && rbeginT != rendT) {
-  }
-  return true;
+  return create_stack(beginS, endS) == create_stack(beginT, endT);
 }
 
 } // namespace april2020
