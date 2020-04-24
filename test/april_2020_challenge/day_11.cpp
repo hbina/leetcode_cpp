@@ -11,4 +11,22 @@ TEST_CASE("april 2020 day 11 1")
     new akarithm::TreeNode<>(3));
   const int expected = 3;
   const auto result = april2020::diameterOfBinaryTree(input);
+  CHECK(expected == result);
+}
+
+TEST_CASE("april 2020 day 11 2")
+{
+  akarithm::TreeNode<>* input =
+    new akarithm::TreeNode<>(1, new akarithm::TreeNode<>(2), nullptr);
+  const int expected = 1;
+  const auto result = april2020::diameterOfBinaryTree(input);
+  CHECK(expected == result);
+}
+
+TEST_CASE("april 2020 day 11 3")
+{
+  akarithm::TreeNode<>* input = nullptr;
+  const int expected = 0;
+  const auto result = april2020::diameterOfBinaryTree(input);
+  CHECK(expected == result);
 }
