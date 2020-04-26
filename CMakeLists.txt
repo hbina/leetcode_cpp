@@ -115,7 +115,9 @@ add_executable(
   test/april_2020_challenge/day_14.cpp
   test/april_2020_challenge/day_15.cpp
   test/april_2020_challenge/day_16.cpp
-  test/april_2020_challenge/day_17.cpp)
+  test/april_2020_challenge/day_17.cpp
+  test/april_2020_challenge/day_18.cpp
+  test/april_2020_challenge/day_19.cpp)
 
 target_include_directories(leetcode_cpp PRIVATE ${CMAKE_SOURCE_DIR}/doctest)
 target_include_directories(leetcode_cpp
