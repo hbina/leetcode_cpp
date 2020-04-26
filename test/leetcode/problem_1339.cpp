@@ -15,4 +15,5 @@ TEST_CASE("problem 5330 1")
   const int expected = 90;
   // const int result = leetcode::maxProduct(input);
   // CHECK(expected == result);
+  delete input;
 }
