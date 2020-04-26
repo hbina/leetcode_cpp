@@ -12,6 +12,7 @@ TEST_CASE("april 2020 day 11 1")
   const int expected = 3;
   const auto result = april2020::diameterOfBinaryTree(input);
   CHECK(expected == result);
+  delete input;
 }
 
 TEST_CASE("april 2020 day 11 2")
@@ -21,6 +22,7 @@ TEST_CASE("april 2020 day 11 2")
   const int expected = 1;
   const auto result = april2020::diameterOfBinaryTree(input);
   CHECK(expected == result);
+  delete input;
 }
 
 TEST_CASE("april 2020 day 11 3")
