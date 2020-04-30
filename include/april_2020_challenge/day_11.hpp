@@ -2,10 +2,11 @@
 
 #include "data_structure/tree_node.hpp"
 
-#include <iostream>
+#include <algorithm>
 #include <iterator>
 #include <stack>
 #include <unordered_map>
+
 
 namespace april2020 {
 
