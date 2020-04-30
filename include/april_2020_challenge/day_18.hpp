@@ -1,10 +1,12 @@
 #pragma once
 
+#include <algorithm>
 #include <iterator>
 #include <numeric>
 #include <stack>
 #include <unordered_map>
 #include <vector>
+
 
 namespace april2020 {
 
