@@ -29,7 +29,7 @@ countElements(IterTy begin, IterTy end) -> int
     auto rhs = std::next(std::cbegin(grouped), iter + 1);
     auto diff = (rhs->first) - (lhs->first);
     if (diff == 1) {
-      result += lhs->second;
+      result += static_cast<int>(lhs->second);
     }
   }
   return result;
