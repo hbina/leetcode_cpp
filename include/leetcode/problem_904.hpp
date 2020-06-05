@@ -14,8 +14,8 @@ namespace leetcode {
 
 template<typename IterTy,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
-ValueTy
-totalFruit(IterTy iter_begin, IterTy iter_end)
+static auto
+totalFruit(IterTy iter_begin, IterTy iter_end) -> ValueTy
 {
   using KeyTy = std::pair<ValueTy, ValueTy>;
   using FreqTy = std::size_t;
@@ -56,24 +56,23 @@ totalFruit(IterTy iter_begin, IterTy iter_end)
       return acc;
     });
 
-  // TODO: We need group_fold for this.
+  std::vector<std::vector<FreqTy>> group_adjacent_difference_fold =
+    akarithm::group_fold(
+      std::cbegin(adjacent_difference),
+      std::cend(adjacent_difference),
+      [](const AdjDiffTy& lhs, const AdjDiffTy& rhs) -> bool {
+        return lhs.first == rhs.first;
+      },
+      [](const std::vector<AdjDiffTy>& group) -> std::vector<FreqTy> {
+        std::vector<FreqTy> group_adjacent_difference;
+        group_adjacent_difference.reserve(group.size() + 1);
 
-  auto group_adjacent_difference_fold = akarithm::group_fold(
-    std::cbegin(adjacent_difference),
-    std::cend(adjacent_difference),
-    [](const AdjDiffTy& lhs, const AdjDiffTy& rhs) -> bool {
-      return lhs.first == rhs.first;
-    },
-    [](const std::vector<AdjDiffTy>& group) -> std::vector<FreqTy> {
-      std::vector<FreqTy> group_adjacent_difference;
-      group_adjacent_difference.reserve(group.size() + 1);
-
-      for (const AdjDiffTy& x : group) {
-        group_adjacent_difference.emplace_back(x.second.first);
-      }
-      group_adjacent_difference.emplace_back(group.back().second.second);
-      return group_adjacent_difference;
-    });
+        for (const AdjDiffTy& x : group) {
+          group_adjacent_difference.emplace_back(x.second.first);
+        }
+        group_adjacent_difference.emplace_back(group.back().second.second);
+        return group_adjacent_difference;
+      });
 
   std::vector<FreqTy> max_vectors = *std::max_element(
     std::cbegin(group_adjacent_difference_fold),
@@ -85,4 +84,34 @@ totalFruit(IterTy iter_begin, IterTy iter_end)
 
   return std::accumulate(std::cbegin(max_vectors), std::cend(max_vectors), 0);
 }
+
+template<typename IterTy,
+         typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
+static auto
+totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> ValueTy
+{
+  using FreqTy = std::size_t;
+  using GroupTy = std::pair<ValueTy, FreqTy>;
+
+  if (iter_begin == iter_end) {
+    // Should return Result<ValueTy>
+    throw std::runtime_error(
+      "This function cannot operate when `iter_begin == iter_end`.");
+  }
+
+  std::vector<GroupTy> group_frequency =
+    akarithm::group_by_minify(iter_begin, iter_end, std::equal_to{});
+
+  auto group_iter_begin = std::cbegin(group_frequency);
+  auto group_iter_end = std::cend(group_frequency);
+
+  GroupTy prev = *group_iter_begin;
+  group_iter_begin = std::next(group_iter_begin);
+
+  while (group_iter_begin != group_iter_end) {
+    GroupTy current = *group_iter_begin;
+    group_iter_begin = std::next(group_iter_begin);
+  }
+}
+
 }
