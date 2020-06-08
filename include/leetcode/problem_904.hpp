@@ -1,5 +1,6 @@
 #pragma once
 
+#include "util/generic/fold.hpp"
 #include "util/generic/group_by.hpp"
 #include "util/generic/group_by_minify.hpp"
 #include "util/generic/group_fold.hpp"
@@ -13,12 +14,12 @@
 namespace leetcode {
 
 template<typename IterTy,
+         typename FreqTy = std::size_t,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
 static auto
-totalFruit(IterTy iter_begin, IterTy iter_end) -> ValueTy
+totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
 {
   using KeyTy = std::pair<ValueTy, ValueTy>;
-  using FreqTy = std::size_t;
   using FreqPairTy = std::pair<FreqTy, FreqTy>;
   using AdjDiffTy = std::pair<KeyTy, FreqPairTy>;
   using GroupTy = std::pair<ValueTy, FreqTy>;
@@ -86,11 +87,11 @@ totalFruit(IterTy iter_begin, IterTy iter_end) -> ValueTy
 }
 
 template<typename IterTy,
+         typename FreqTy = std::size_t,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
 static auto
-totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> ValueTy
+totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> FreqTy
 {
-  using FreqTy = std::size_t;
   using GroupTy = std::pair<ValueTy, FreqTy>;
 
   if (iter_begin == iter_end) {
@@ -99,19 +100,9 @@ totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> ValueTy
       "This function cannot operate when `iter_begin == iter_end`.");
   }
 
-  std::vector<GroupTy> group_frequency =
-    akarithm::group_by_minify(iter_begin, iter_end, std::equal_to{});
+  // TODO: The algorithm involves zipping 3 elements at a time.
 
-  auto group_iter_begin = std::cbegin(group_frequency);
-  auto group_iter_end = std::cend(group_frequency);
-
-  GroupTy prev = *group_iter_begin;
-  group_iter_begin = std::next(group_iter_begin);
-
-  while (group_iter_begin != group_iter_end) {
-    GroupTy current = *group_iter_begin;
-    group_iter_begin = std::next(group_iter_begin);
-  }
+  return {};
 }
 
 }
