@@ -7,7 +7,7 @@ TEST_CASE("problem_904 1")
   const std::vector<int> input_1 = { 1, 2, 1 };
   const int expected = 3;
   const int result =
-    leetcode::totalFruit(std::cbegin(input_1), std::cend(input_1));
+    leetcode::totalFruit_LinearTime(std::cbegin(input_1), std::cend(input_1));
   CHECK(expected == result);
 }
 
@@ -16,7 +16,7 @@ TEST_CASE("problem_904 2")
   const std::vector<int> input_1 = { 0, 1, 2, 2 };
   const int expected = 3;
   const int result =
-    leetcode::totalFruit(std::cbegin(input_1), std::cend(input_1));
+    leetcode::totalFruit_LinearTime(std::cbegin(input_1), std::cend(input_1));
   CHECK(expected == result);
 }
 
@@ -25,7 +25,7 @@ TEST_CASE("problem_904 3")
   const std::vector<int> input_1 = { 1, 2, 3, 2, 2 };
   const int expected = 4;
   const int result =
-    leetcode::totalFruit(std::cbegin(input_1), std::cend(input_1));
+    leetcode::totalFruit_LinearTime(std::cbegin(input_1), std::cend(input_1));
   CHECK(expected == result);
 }
 
@@ -34,11 +34,11 @@ TEST_CASE("problem_904 4")
   const std::vector<int> input_1 = { 0 };
   const int expected = 1;
   const int result =
-    leetcode::totalFruit(std::cbegin(input_1), std::cend(input_1));
+    leetcode::totalFruit_LinearTime(std::cbegin(input_1), std::cend(input_1));
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_904 4")
+TEST_CASE("problem_904 5")
 {
   const std::vector<int> input_1 = {
     0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
@@ -1644,6 +1644,6 @@ TEST_CASE("problem_904 4")
   };
   const int expected = 40000;
   const int result =
-    leetcode::totalFruit(std::cbegin(input_1), std::cend(input_1));
+    leetcode::totalFruit_LinearTime(std::cbegin(input_1), std::cend(input_1));
   CHECK(expected == result);
 }

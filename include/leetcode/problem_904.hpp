@@ -16,7 +16,7 @@ namespace leetcode {
 template<typename IterTy,
          typename FreqTy = std::size_t,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
-static auto
+static constexpr auto
 totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
 {
   using KeyTy = std::pair<ValueTy, ValueTy>;
@@ -89,7 +89,7 @@ totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
 template<typename IterTy,
          typename FreqTy = std::size_t,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
-static auto
+static constexpr auto
 totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> FreqTy
 {
   using GroupTy = std::pair<ValueTy, FreqTy>;
@@ -100,9 +100,23 @@ totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> FreqTy
       "This function cannot operate when `iter_begin == iter_end`.");
   }
 
-  // TODO: The algorithm involves zipping 3 elements at a time.
+  FreqTy result = {};
+  FreqTy current = {};
+  FreqTy count_b = {};
+  // FIXME: The following values have undefined states.
+  ValueTy lhs_value = {};
+  ValueTy rhs_value = {};
 
-  return {};
+  std::for_each(iter_begin, iter_end, [&](const ValueTy& c) {
+    current = c == lhs_value || c == rhs_value ? current + 1 : count_b + 1;
+    count_b = c == rhs_value ? count_b + 1 : 1;
+    if (rhs_value != c) {
+      lhs_value = rhs_value;
+      rhs_value = c;
+    }
+    result = std::max(result, current);
+  });
+  return result;
 }
 
 }
