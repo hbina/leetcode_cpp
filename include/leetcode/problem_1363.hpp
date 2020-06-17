@@ -123,4 +123,119 @@ largestMultipleOfThree(IterTy iter_begin, IterTy iter_end) -> std::string
   }
 }
 
+std::string
+largestMultipleOfThree_FastAndNoAllocation(const std::vector<int>& digits)
+{
+  int ctmap[10] = { 0 };
+
+  // Frequency map
+  for (int i = 0; i < digits.size(); i++)
+    ctmap[digits[i]]++;
+
+  // If the frequency of the digit is a multiple of 3,
+  // then their summation are necessarily divisible by 3.
+  const int one = ctmap[1] % 3;
+  const int two = ctmap[2] % 3;
+  const int four = ctmap[4] % 3;
+  const int five = ctmap[5] % 3;
+  const int seven = ctmap[7] % 3;
+  const int eight = ctmap[8] % 3;
+
+  // Based on the remainders of each digit, calculate created by each of the
+  // remainders.
+  const int extra =
+    (one + 2 * two + 4 * four + 5 * five + 7 * seven + 8 * eight) % 3;
+
+  // If the remainder is 1, then we try to find the smallest possible digit that
+  // yields a remainder of 1 and remove them i.e. the digit 4 and 7 in that
+  // order. If there are no such digits (i.e. the frequenct of 4 and 7 are
+  // zero), then we try to find the smallest possible combinations of digits
+  // that have a remainder of 2.
+  // For example, `2 + 2 == 4` and `4 mod 3 == 1`. Therefore, its possible to
+  // remove remainders of 1 by removing 2 remainders of 2.
+  if (extra == 1) {
+    if (ctmap[1] > 0)
+      ctmap[1]--;
+    else if (ctmap[4])
+      ctmap[4]--;
+    else if (ctmap[7])
+      ctmap[7]--;
+    else if (ctmap[2] > 1)
+      ctmap[2] -= 2;
+    else if (ctmap[2] > 0 && ctmap[5] > 0) {
+      ctmap[2]--;
+      ctmap[5]--;
+    } else if (ctmap[5] > 1)
+      ctmap[5] -= 2;
+    else if (ctmap[8] > 0 && ctmap[2] > 0) {
+      ctmap[8]--;
+      ctmap[2]--;
+    } else if (ctmap[8] > 0 && ctmap[5] > 0) {
+      ctmap[8]--;
+      ctmap[5]--;
+    } else {
+      ctmap[8] -= 2;
+    }
+  }
+
+  // Same logic like `extra == 1` above.
+  if (extra == 2) {
+    if (ctmap[2] > 0)
+      ctmap[2]--;
+    else if (ctmap[5])
+      ctmap[5]--;
+    else if (ctmap[8])
+      ctmap[8]--;
+    else if (ctmap[1] > 1)
+      ctmap[1] -= 2;
+    else if (ctmap[1] > 0 && ctmap[4] > 0) {
+      ctmap[1]--;
+      ctmap[4]--;
+    } else if (ctmap[4] > 1)
+      ctmap[4] -= 2;
+    else if (ctmap[7] > 0 && ctmap[1] > 0) {
+      ctmap[7]--;
+      ctmap[1]--;
+    } else if (ctmap[7] > 0 && ctmap[4] > 0) {
+      ctmap[7]--;
+      ctmap[4]--;
+    } else {
+      ctmap[7] -= 2;
+    }
+  }
+
+  std::string ans = "";
+  ans.reserve(ctmap[9] + ctmap[8] + ctmap[7] + ctmap[6] + ctmap[5] + ctmap[4] +
+              ctmap[3] + ctmap[2] + ctmap[1]);
+  for (int i = 1; i <= ctmap[9]; i++)
+    ans += '9';
+  for (int i = 1; i <= ctmap[8]; i++)
+    ans += '8';
+  for (int i = 1; i <= ctmap[7]; i++)
+    ans += '7';
+  for (int i = 1; i <= ctmap[6]; i++)
+    ans += '6';
+  for (int i = 1; i <= ctmap[5]; i++)
+    ans += '5';
+  for (int i = 1; i <= ctmap[4]; i++)
+    ans += '4';
+  for (int i = 1; i <= ctmap[3]; i++)
+    ans += '3';
+  for (int i = 1; i <= ctmap[2]; i++)
+    ans += '2';
+  for (int i = 1; i <= ctmap[1]; i++)
+    ans += '1';
+
+  if (ans.length() != 0) {
+    for (int i = 1; i <= ctmap[0]; i++) {
+      ans += '0';
+    }
+  }
+
+  if (ctmap[0] > 0 && ans == "") {
+    ans = "0";
+  }
+  return ans;
+}
+
 }
