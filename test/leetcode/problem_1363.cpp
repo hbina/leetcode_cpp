@@ -46,3 +46,48 @@ TEST_CASE("problem 1363 5")
     leetcode::largestMultipleOfThree(std::cbegin(input), std::cend(input));
   CHECK(expected == result);
 }
+
+TEST_CASE("problem 1363 6")
+{
+  const std::vector<int> input = { 8, 1, 9 };
+  const std::string expected = "981";
+  const std::string result =
+    leetcode::largestMultipleOfThree_FastAndNoAllocation(std::cbegin(input), std::cend(input));
+  CHECK(expected == result);
+}
+
+TEST_CASE("problem 1363 7")
+{
+  const std::vector<int> input = { 8, 6, 7, 1, 0 };
+  const std::string expected = "8760";
+  const std::string result =
+    leetcode::largestMultipleOfThree_FastAndNoAllocation(std::cbegin(input), std::cend(input));
+  CHECK(expected == result);
+}
+
+TEST_CASE("problem 1363 8")
+{
+  const std::vector<int> input = { 1 };
+  const std::string expected = "";
+  const std::string result =
+    leetcode::largestMultipleOfThree_FastAndNoAllocation(std::cbegin(input), std::cend(input));
+  CHECK(expected == result);
+}
+
+TEST_CASE("problem 1363 9")
+{
+  const std::vector<int> input = { 0, 0, 0, 0, 0, 0 };
+  const std::string expected = "0";
+  const std::string result =
+    leetcode::largestMultipleOfThree_FastAndNoAllocation(std::cbegin(input), std::cend(input));
+  CHECK(expected == result);
+}
+
+TEST_CASE("problem 1363 10")
+{
+  const std::vector<int> input = { 9, 8, 6, 8, 6 };
+  const std::string expected = "966";
+  const std::string result =
+    leetcode::largestMultipleOfThree_FastAndNoAllocation(std::cbegin(input), std::cend(input));
+  CHECK(expected == result);
+}

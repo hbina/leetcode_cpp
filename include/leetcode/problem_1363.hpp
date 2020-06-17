@@ -123,14 +123,22 @@ largestMultipleOfThree(IterTy iter_begin, IterTy iter_end) -> std::string
   }
 }
 
-std::string
-largestMultipleOfThree_FastAndNoAllocation(const std::vector<int>& digits)
+template<typename IterTy>
+static auto
+largestMultipleOfThree_FastAndNoAllocation(IterTy iter_begin, IterTy iter_end)
+  -> std::string
 {
-  int ctmap[10] = { 0 };
+  using ValueTy = typename std::iterator_traits<IterTy>::value_type;
 
   // Frequency map
-  for (int i = 0; i < digits.size(); i++)
-    ctmap[digits[i]]++;
+  std::array<int, 10> ctmap =
+    std::accumulate(iter_begin,
+                    iter_end,
+                    std::array<int, 10>{},
+                    [](std::array<int, 10> ctmap, const ValueTy& digit) {
+                      ctmap[digit]++;
+                      return ctmap;
+                    });
 
   // If the frequency of the digit is a multiple of 3,
   // then their summation are necessarily divisible by 3.
@@ -235,6 +243,7 @@ largestMultipleOfThree_FastAndNoAllocation(const std::vector<int>& digits)
   if (ctmap[0] > 0 && ans == "") {
     ans = "0";
   }
+
   return ans;
 }
 
