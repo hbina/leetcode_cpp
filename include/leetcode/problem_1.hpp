@@ -11,32 +11,34 @@
 namespace leetcode {
 
 template<
-  typename Iterable,
-  typename ValueTy =
-    typename std::iterator_traits<typename Iterable::iterator>::value_type,
-  typename IndexTy =
-    typename std::iterator_traits<typename Iterable::iterator>::difference_type>
+  typename IterTy,
+  typename ResultTy =
+    std::vector<typename std::iterator_traits<IterTy>::value_type>,
+  typename ValueTy = typename std::iterator_traits<IterTy>::value_type,
+  typename IndexTy = typename std::iterator_traits<IterTy>::difference_type>
 static constexpr auto
-twoSum(const Iterable& nums, const ValueTy& target) -> Iterable
+twoSum(IterTy iter_begin, IterTy iter_end, const ValueTy& target) -> ResultTy
 {
   // Get the indices and sort based on the value its pointing to
   std::vector<IndexTy> indices;
-  indices.resize(nums.size());
+  indices.resize(std::distance(iter_begin, iter_end));
   std::iota(std::begin(indices), std::end(indices), 0);
   std::sort(std::begin(indices),
             std::end(indices),
             [&](const IndexTy& lhs, const IndexTy& rhs) -> bool {
-              return nums[lhs] < nums[rhs];
+              return *std::next(iter_begin, lhs) < *std::next(iter_begin, rhs);
             });
+
   // Find the sum pair using sliding window
   auto [left, right] = akarithm::sliding_window(
     std::cbegin(indices),
     std::cend(indices),
     [&](const IndexTy& lhs, const IndexTy& rhs) -> bool {
-      return nums[lhs] + nums[rhs] < target;
+      return *std::next(iter_begin, lhs) + *std::next(iter_begin, rhs) < target;
     },
     [&](const IndexTy& lhs, const IndexTy& rhs) -> bool {
-      return nums[lhs] + nums[rhs] == target;
+      return *std::next(iter_begin, lhs) + *std::next(iter_begin, rhs) ==
+             target;
     });
   return { static_cast<ValueTy>(*left), static_cast<ValueTy>(*right) };
 }
