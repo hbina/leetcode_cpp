@@ -23,7 +23,6 @@ totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
   using FreqPairTy = std::pair<FreqTy, FreqTy>;
   using AdjDiffTy = std::pair<KeyTy, FreqPairTy>;
   using GroupTy = std::pair<ValueTy, FreqTy>;
-  using AdjGroupTy = std::pair<KeyTy, ValueTy>;
 
   if (iter_begin == iter_end) {
     // Should return Result<ValueTy>
@@ -92,8 +91,6 @@ template<typename IterTy,
 static constexpr auto
 totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> FreqTy
 {
-  using GroupTy = std::pair<ValueTy, FreqTy>;
-
   if (iter_begin == iter_end) {
     // Should return Result<ValueTy>
     throw std::runtime_error(

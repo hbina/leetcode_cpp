@@ -1,20 +1,29 @@
 #pragma once
 
 #include <algorithm>
-#include <iostream>
+#include <iterator>
 #include <vector>
 
 namespace leetcode {
-template<typename ValueTy>
+
+template<
+  typename IterTyLhs,
+  typename IterTyRhs,
+  typename ValueTy = typename std::iterator_traits<IterTyLhs>::value_type,
+  typename ValueTyRhs = typename std::iterator_traits<IterTyLhs>::value_type,
+  typename = std::enable_if_t<std::is_same_v<ValueTy, ValueTyRhs>>>
 static constexpr double
-findMedianSortedArrays_basic(const std::vector<ValueTy>& nums1,
-                             const std::vector<ValueTy>& nums2)
+findMedianSortedArrays_basic(IterTyLhs iter_begin_lhs,
+                             IterTyLhs iter_end_lhs,
+                             IterTyRhs iter_begin_rhs,
+                             IterTyRhs iter_end_rhs)
 {
   std::vector<ValueTy> collection;
-  collection.reserve(nums1.size() + nums2.size());
-  collection.insert(collection.end(), nums1.begin(), nums1.end());
-  collection.insert(collection.end(), nums2.begin(), nums2.end());
-  std::sort(collection.begin(), collection.end());
+  collection.reserve(std::distance(iter_begin_lhs, iter_end_lhs) +
+                     std::distance(iter_begin_rhs, iter_end_rhs));
+  collection.insert(std::begin(collection), iter_begin_lhs, iter_end_lhs);
+  collection.insert(std::begin(collection), iter_begin_rhs, iter_end_rhs);
+  std::sort(std::begin(collection), std::end(collection));
   if (collection.size() % 2 == 0) {
     double left = collection[collection.size() / 2 - 1];
     double right = collection[collection.size() / 2];

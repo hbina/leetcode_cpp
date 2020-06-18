@@ -214,7 +214,7 @@ largestMultipleOfThree_FastAndNoAllocation(IterTy iter_begin, IterTy iter_end)
 
   std::string ans = "";
   ans.reserve(ctmap[9] + ctmap[8] + ctmap[7] + ctmap[6] + ctmap[5] + ctmap[4] +
-              ctmap[3] + ctmap[2] + ctmap[1]);
+              ctmap[3] + ctmap[2] + ctmap[1] + ctmap[0]);
   for (int i = 1; i <= ctmap[9]; i++)
     ans += '9';
   for (int i = 1; i <= ctmap[8]; i++)
