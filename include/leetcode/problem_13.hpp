@@ -1,44 +1,60 @@
 #pragma once
 
-#include <map>
+#include <iterator>
 
 namespace leetcode {
 
-template<typename Iterable, typename ValueTy = int>
-static constexpr ValueTy
-romanToInt(Iterable s)
+template<
+  typename ReturnTy = int,
+  typename IterTy,
+  typename SizeTy = typename std::iterator_traits<IterTy>::difference_type>
+static constexpr ReturnTy
+romanToInt(IterTy iter_begin, IterTy iter_end)
 {
   // Prelude
-  constexpr auto nums = [](const char x) -> ValueTy {
-    switch (x) {
-      case 'I':
-        return 1;
-      case 'V':
-        return 5;
-      case 'X':
-        return 10;
-      case 'L':
-        return 50;
-      case 'C':
-        return 100;
-      case 'D':
-        return 500;
-      case 'M':
-        return 1000;
-      default:
-        return 0;
+  constexpr auto get = [](const IterTy& iter_begin,
+                          const IterTy& iter_end,
+                          const SizeTy& offset) -> ReturnTy {
+    constexpr auto nums = [](const char& x) -> ReturnTy {
+      switch (x) {
+        case 'I':
+          return 1;
+        case 'V':
+          return 5;
+        case 'X':
+          return 10;
+        case 'L':
+          return 50;
+        case 'C':
+          return 100;
+        case 'D':
+          return 500;
+        case 'M':
+          return 1000;
+        default:
+          return 0;
+      }
+    };
+
+    const auto iter = std::next(iter_begin, offset);
+    if (iter == iter_end) {
+      return nums(0);
+    } else {
+      return nums(*iter);
     }
   };
 
-  ValueTy sum = 0;
+  const SizeTy size = std::distance(iter_begin, iter_end);
 
-  for (std::size_t iter = 0; iter < s.size(); iter++) {
-    auto left = s[iter];
-    auto right = s[iter + 1];
-    if (nums(left) >= nums(right)) {
-      sum += nums(left);
+  ReturnTy sum = 0;
+
+  for (std::size_t iter = 0; iter < size; iter++) {
+    auto left = get(iter_begin, iter_end, iter);
+    auto right = get(iter_begin, iter_end, iter + 1);
+    if (left >= right) {
+      sum += left;
     } else {
-      sum += nums(right) - nums(left);
+      sum += right - left;
       iter++;
     }
   }
