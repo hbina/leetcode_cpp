@@ -2,6 +2,7 @@
 
 #include "leetcode/problem_13.hpp"
 
+#include <array>
 #include <string>
 #include <vector>
 
@@ -72,5 +73,12 @@ TEST_CASE("problem_13")
 {
   const std::vector<char> input = { 'M', 'C', 'M', 'X', 'C', 'I', 'V' };
   const std::size_t expected = 1994;
+  CHECK(expected == leetcode::romanToInt(std::cbegin(input), std::cend(input)));
+}
+
+TEST_CASE("problem_13")
+{
+  const std::array<char, 7> input = { 'M', 'C', 'M', 'X', 'C', 'I', 'V' };
+  const int expected = 1994;
   CHECK(expected == leetcode::romanToInt(std::cbegin(input), std::cend(input)));
 }

@@ -101,6 +101,7 @@ add_executable(
   test/leetcode/problem_1422.cpp
   test/leetcode/problem_1423.cpp
   test/leetcode/problem_1424.cpp
+  test/leetcode/problem_1470.cpp
   test/leetcode/problem_1480.cpp
   test/leetcode/problem_1481.cpp
   test/april_2020_challenge/day_1.cpp
