@@ -27,10 +27,10 @@ class LRUCache
 
   MapTy cache;
   ListTy used;
-  int capacity;
+  std::size_t capacity;
 
 public:
-  LRUCache(const int& capacity)
+  LRUCache(const std::size_t capacity)
     : capacity(capacity)
   {
     cache.reserve(capacity);
