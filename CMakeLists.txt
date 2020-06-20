@@ -96,11 +96,13 @@ add_executable(
   test/leetcode/problem_1339.cpp
   test/leetcode/problem_1346.cpp
   test/leetcode/problem_1363.cpp
+  test/leetcode/problem_1365.cpp
   test/leetcode/problem_1409.cpp
   test/leetcode/problem_1417.cpp
   test/leetcode/problem_1422.cpp
   test/leetcode/problem_1423.cpp
   test/leetcode/problem_1424.cpp
+  test/leetcode/problem_1431.cpp
   test/leetcode/problem_1470.cpp
   test/leetcode/problem_1480.cpp
   test/leetcode/problem_1481.cpp
