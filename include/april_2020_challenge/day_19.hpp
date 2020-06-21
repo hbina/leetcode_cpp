@@ -9,12 +9,12 @@
 
 namespace april2020 {
 
-template<typename IterTy>
+template<typename ResultTy = int, typename IterTy>
 static auto
-search(IterTy begin, IterTy end, const int& target) -> int
+search(IterTy begin, IterTy end, const int& target) -> ResultTy
 {
-  auto find = std::find(begin, end, target);
-  return find == end ? -1 : std::distance(begin, find);
+  const auto find = std::find(begin, end, target);
+  return find == end ? -1 : static_cast<ResultTy>(std::distance(begin, find));
 }
 
 }

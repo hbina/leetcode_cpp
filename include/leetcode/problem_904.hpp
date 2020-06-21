@@ -9,12 +9,13 @@
 
 #include <algorithm>
 #include <functional>
+#include <stdexcept>
 #include <vector>
 
 namespace leetcode {
 
-template<typename IterTy,
-         typename FreqTy = std::size_t,
+template<typename FreqTy = std::size_t,
+         typename IterTy,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
 static constexpr auto
 totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy

@@ -9,9 +9,9 @@
 
 namespace april2020 {
 
-template<typename IterTy>
+template<typename ResultTy = int, typename IterTy>
 static constexpr auto
-findMaxLength(IterTy begin, IterTy end) -> int
+findMaxLength(IterTy begin, IterTy end) -> ResultTy
 {
   // Prelude
   using ValueTy = typename std::iterator_traits<IterTy>::value_type;
@@ -50,8 +50,8 @@ findMaxLength(IterTy begin, IterTy end) -> int
     iter = std::next(iter);
   }
 
-  constexpr auto length = [](const PairTy& pair) {
-    return pair.second.second - pair.second.first;
+  constexpr auto length = [](const PairTy& pair) -> ResultTy {
+    return static_cast<ResultTy>(pair.second.second - pair.second.first);
   };
 
   return length(

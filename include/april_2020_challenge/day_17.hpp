@@ -33,25 +33,26 @@ numIslands(const std::vector<std::vector<char>>& grid) -> int
       }
 
       while (!plague.empty()) {
-        auto [x, y] = plague.top();
+        auto [inner_x, inner_y] = plague.top();
         plague.pop();
-        copy[y][x] = '0';
+        copy[inner_y][inner_x] = '0';
 
         // Top
-        if (y > 0 && copy[y - 1][x] == '1') {
-          plague.emplace(x, y - 1);
+        if (inner_y > 0 && copy[inner_y - 1][inner_x] == '1') {
+          plague.emplace(inner_x, inner_y - 1);
         }
         // Left
-        if (x > 0 && copy[y][x - 1] == '1') {
-          plague.emplace(x - 1, y);
+        if (inner_x > 0 && copy[inner_y][inner_x - 1] == '1') {
+          plague.emplace(inner_x - 1, inner_y);
         }
         // Right
-        if (x < copy[y].size() - 1 && copy[y][x + 1] == '1') {
-          plague.emplace(x + 1, y);
+        if (inner_x < copy[inner_y].size() - 1 &&
+            copy[inner_y][inner_x + 1] == '1') {
+          plague.emplace(inner_x + 1, inner_y);
         }
         // Bottom
-        if (y < copy.size() - 1 && copy[y + 1][x] == '1') {
-          plague.emplace(x, y + 1);
+        if (inner_y < copy.size() - 1 && copy[inner_y + 1][inner_x] == '1') {
+          plague.emplace(inner_x, inner_y + 1);
         }
       }
     }
