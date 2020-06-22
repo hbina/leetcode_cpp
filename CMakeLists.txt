@@ -94,6 +94,7 @@ add_executable(
   test/leetcode/problem_1337.cpp
   test/leetcode/problem_1338.cpp
   test/leetcode/problem_1339.cpp
+  test/leetcode/problem_1342.cpp
   test/leetcode/problem_1346.cpp
   test/leetcode/problem_1363.cpp
   test/leetcode/problem_1365.cpp

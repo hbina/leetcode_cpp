@@ -23,7 +23,8 @@ avoidFlood(IterTy iter_begin, IterTy iter_end) -> std::vector<int>
   std::unordered_map<ValueTy, IndexTy> map;
   std::vector<IndexTy> coins;
 
-  for (DiffType index = 0; index < std::distance(iter_begin, iter_end); index++) {
+  for (DiffType index = 0; index < std::distance(iter_begin, iter_end);
+       index++) {
     ValueTy value = *std::next(iter_begin, index);
     if (value == 0) {
       coins.emplace_back(index);
@@ -51,4 +52,5 @@ avoidFlood(IterTy iter_begin, IterTy iter_end) -> std::vector<int>
 
   return result;
 }
+
 }
