@@ -4,7 +4,7 @@
 
 #include "util/generic/set_equality.hpp"
 
-TEST_CASE("problem 1 1")
+TEST_CASE("problem_1 1")
 {
   const std::vector<int> input_1 = { 2, 7, 11, 15 };
   const int input_2 = 9;
@@ -17,7 +17,7 @@ TEST_CASE("problem 1 1")
                                std::cend(result)));
 }
 
-TEST_CASE("problem 1 2")
+TEST_CASE("problem_1 2")
 {
   const std::vector<int> input_1 = { 3, 2, 4 };
   const int input_2 = 6;
@@ -30,7 +30,7 @@ TEST_CASE("problem 1 2")
                                std::cend(result)));
 }
 
-TEST_CASE("problem 1 3")
+TEST_CASE("problem_1 3")
 {
   const std::vector<int> input_1 = { 3, 3 };
   const int input_2 = 6;

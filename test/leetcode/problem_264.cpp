@@ -4,7 +4,7 @@
 
 #include <vector>
 
-TEST_CASE("problem 264 1")
+TEST_CASE("problem_264 1")
 {
   const std::size_t input = 10;
   const std::size_t expected = 12;
@@ -12,7 +12,7 @@ TEST_CASE("problem 264 1")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 264 2")
+TEST_CASE("problem_264 2")
 {
   const std::size_t input = 306;
   const std::size_t expected = 92160;
@@ -20,7 +20,7 @@ TEST_CASE("problem 264 2")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 264 3")
+TEST_CASE("problem_264 3")
 {
   const std::size_t input = 1407;
   const std::size_t expected = 536870912;
@@ -28,7 +28,7 @@ TEST_CASE("problem 264 3")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 264 3")
+TEST_CASE("problem_264 3")
 {
   const std::size_t input = 1;
   const std::size_t expected = 1;
@@ -36,7 +36,7 @@ TEST_CASE("problem 264 3")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 264 4")
+TEST_CASE("problem_264 4")
 {
   const std::vector<std::size_t> input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
   const std::vector<std::size_t> expected = { 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 };

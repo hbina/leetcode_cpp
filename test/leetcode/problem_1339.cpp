@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_1339.hpp"
 
-TEST_CASE("problem 5330 1")
+TEST_CASE("problem_5330 1")
 {
   const akarithm::TreeNode<>* input = new akarithm::TreeNode<>(
     1,

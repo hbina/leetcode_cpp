@@ -4,7 +4,7 @@
 
 #include <vector>
 
-TEST_CASE("problem 1346 1")
+TEST_CASE("problem_1346 1")
 {
   const std::vector<int> input = { 10, 2, 5, 3 };
   const bool expected = true;
@@ -12,7 +12,7 @@ TEST_CASE("problem 1346 1")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1346 2")
+TEST_CASE("problem_1346 2")
 {
   const std::vector<int> input = { -20, 8, -6, -14, 0, -19, 14, 4 };
   const bool expected = true;
@@ -20,7 +20,7 @@ TEST_CASE("problem 1346 2")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1346 3")
+TEST_CASE("problem_1346 3")
 {
   const std::vector<int> input = { -10, 12, -20, -8, 15 };
   const bool expected = true;

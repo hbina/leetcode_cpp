@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_1409.hpp"
 
-TEST_CASE("problem 1409 1")
+TEST_CASE("problem_1409 1")
 {
   const std::vector<int> input_1 = { 3, 1, 2, 1 };
   const int input_2 = 5;

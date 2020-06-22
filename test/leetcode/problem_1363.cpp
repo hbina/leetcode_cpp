@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_1363.hpp"
 
-TEST_CASE("problem 1363 1")
+TEST_CASE("problem_1363 1")
 {
   const std::vector<int> input = { 8, 1, 9 };
   const std::string expected = "981";
@@ -11,7 +11,7 @@ TEST_CASE("problem 1363 1")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 2")
+TEST_CASE("problem_1363 2")
 {
   const std::vector<int> input = { 8, 6, 7, 1, 0 };
   const std::string expected = "8760";
@@ -20,7 +20,7 @@ TEST_CASE("problem 1363 2")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 3")
+TEST_CASE("problem_1363 3")
 {
   const std::vector<int> input = { 1 };
   const std::string expected = "";
@@ -29,7 +29,7 @@ TEST_CASE("problem 1363 3")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 4")
+TEST_CASE("problem_1363 4")
 {
   const std::vector<int> input = { 0, 0, 0, 0, 0, 0 };
   const std::string expected = "0";
@@ -38,7 +38,7 @@ TEST_CASE("problem 1363 4")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 5")
+TEST_CASE("problem_1363 5")
 {
   const std::vector<int> input = { 9, 8, 6, 8, 6 };
   const std::string expected = "966";
@@ -47,7 +47,7 @@ TEST_CASE("problem 1363 5")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 6")
+TEST_CASE("problem_1363 6")
 {
   const std::vector<int> input = { 8, 1, 9 };
   const std::string expected = "981";
@@ -56,7 +56,7 @@ TEST_CASE("problem 1363 6")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 7")
+TEST_CASE("problem_1363 7")
 {
   const std::vector<int> input = { 8, 6, 7, 1, 0 };
   const std::string expected = "8760";
@@ -65,7 +65,7 @@ TEST_CASE("problem 1363 7")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 8")
+TEST_CASE("problem_1363 8")
 {
   const std::vector<int> input = { 1 };
   const std::string expected = "";
@@ -74,7 +74,7 @@ TEST_CASE("problem 1363 8")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 9")
+TEST_CASE("problem_1363 9")
 {
   const std::vector<int> input = { 0, 0, 0, 0, 0, 0 };
   const std::string expected = "0";
@@ -83,7 +83,7 @@ TEST_CASE("problem 1363 9")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 1363 10")
+TEST_CASE("problem_1363 10")
 {
   const std::vector<int> input = { 9, 8, 6, 8, 6 };
   const std::string expected = "966";

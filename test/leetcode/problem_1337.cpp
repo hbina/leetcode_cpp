@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_1337.hpp"
 
-TEST_CASE("problem 5328")
+TEST_CASE("problem_5328")
 {
   const std::vector<std::vector<int>> input_1 = { { 1, 1, 0, 0, 0 },
                                                   { 1, 1, 1, 1, 0 },
@@ -15,7 +15,7 @@ TEST_CASE("problem 5328")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5328 2")
+TEST_CASE("problem_5328 2")
 {
   const std::vector<std::vector<int>> input_1 = {
     { 1, 0, 0, 0 }, { 1, 1, 1, 1 }, { 1, 0, 0, 0 }, { 1, 0, 0, 0 }
@@ -26,7 +26,7 @@ TEST_CASE("problem 5328 2")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5328 2")
+TEST_CASE("problem_5328 2")
 {
   const std::vector<std::vector<int>> input_1 = {
     { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 },

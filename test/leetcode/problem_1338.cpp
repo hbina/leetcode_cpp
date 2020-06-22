@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_1338.hpp"
 
-TEST_CASE("problem 5329 1")
+TEST_CASE("problem_5329 1")
 {
   const std::vector<int> input = { 3, 3, 3, 3, 5, 5, 5, 2, 2, 7 };
   const int expected = 2;
@@ -10,7 +10,7 @@ TEST_CASE("problem 5329 1")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5329 2")
+TEST_CASE("problem_5329 2")
 {
   const std::vector<int> input = { 7, 7, 7, 7, 7, 7 };
   const int expected = 1;
@@ -18,7 +18,7 @@ TEST_CASE("problem 5329 2")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5329 3")
+TEST_CASE("problem_5329 3")
 {
   const std::vector<int> input = { 1, 9 };
   const int expected = 1;
@@ -26,7 +26,7 @@ TEST_CASE("problem 5329 3")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5329 4")
+TEST_CASE("problem_5329 4")
 {
   const std::vector<int> input = { 1000, 1000, 3, 7 };
   const int expected = 1;
@@ -34,7 +34,7 @@ TEST_CASE("problem 5329 4")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5329 5")
+TEST_CASE("problem_5329 5")
 {
   const std::vector<int> input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
   const int expected = 5;
@@ -45,7 +45,7 @@ TEST_CASE("problem 5329 5")
 #define CHECKING_TIMEOUT 0
 
 #ifdef CHECKING_TIMEOUT
-TEST_CASE("problem 5329 6")
+TEST_CASE("problem_5329 6")
 {
   const std::vector<int> input = {
     69825, 70036, 80520, 56487, 38477, 74696, 32228, 81150, 2226,  36485, 52340,

@@ -6,7 +6,7 @@
 
 //  TODO    ::  How to test this?
 
-TEST_CASE("problem 18 1")
+TEST_CASE("problem_18 1")
 {
   const std::vector<int> input_1 = { -3, -2, -1, 0, 0, 1, 2, 3 };
   const int input_2 = 0;
@@ -14,7 +14,7 @@ TEST_CASE("problem 18 1")
     leetcode::fourSum(input_1, input_2);
 }
 
-TEST_CASE("problem 18 2")
+TEST_CASE("problem_18 2")
 {
   const std::vector<int> input_1 = { 1, 0, -1, 0, -2, 2 };
   const int input_2 = 0;

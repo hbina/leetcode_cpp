@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_1332.hpp"
 
-TEST_CASE("problem 5319 1")
+TEST_CASE("problem_5319 1")
 {
   const std::string input = "ababa";
   const int expected = 1;
@@ -10,7 +10,7 @@ TEST_CASE("problem 5319 1")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5319 2")
+TEST_CASE("problem_5319 2")
 {
   const std::string input = "ababaa";
   const int expected = 2;
@@ -18,7 +18,7 @@ TEST_CASE("problem 5319 2")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem 5319 3")
+TEST_CASE("problem_5319 3")
 {
   const std::string input = "";
   const int expected = 0;
