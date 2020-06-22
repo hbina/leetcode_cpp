@@ -21,7 +21,7 @@ template<unsigned int N = 3,
 static constexpr auto
 fold_each_n(IterTy iter_begin, IterTy iter_end, AccTy acc, const F& f) -> AccTy
 {
-  assert(distance(iter_begin, iter_end) % N == 0);
+  assert(std::distance(iter_begin, iter_end) % N == 0);
 
   while (iter_begin != iter_end) {
     acc = std::move(call_n(f, acc, iter_begin, std::make_index_sequence<N>{}));
