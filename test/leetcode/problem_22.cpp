@@ -1,4 +1,4 @@
-#include "doctest/doctest.h"
+#include <doctest/doctest.h>
 
 #include "leetcode/problem_22.hpp"
 #include "util/generic/set_equality.hpp"

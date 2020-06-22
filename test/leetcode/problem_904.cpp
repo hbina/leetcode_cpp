@@ -1,4 +1,4 @@
-#include "doctest/doctest.h"
+#include <doctest/doctest.h>
 
 #include "leetcode/problem_904.hpp"
 

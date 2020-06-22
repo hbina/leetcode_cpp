@@ -1,4 +1,4 @@
-#include "doctest/doctest.h"
+#include <doctest/doctest.h>
 
 #include "april_2020_challenge/day_16.hpp"
 #include "data_structure/list_node.hpp"

@@ -1,4 +1,4 @@
-#include "doctest/doctest.h"
+#include <doctest/doctest.h>
 
 #include "april_2020_challenge/day_19.hpp"
 

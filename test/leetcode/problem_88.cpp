@@ -1,4 +1,4 @@
-#include "doctest/doctest.h"
+#include <doctest/doctest.h>
 
 #include "leetcode/problem_88.hpp"
 #include "util/generic/zip.hpp"
