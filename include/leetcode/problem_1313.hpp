@@ -10,7 +10,7 @@ namespace leetcode {
 
 template<typename IterTy,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
-static auto
+static constexpr auto
 decompressRLElist(IterTy iter_begin, IterTy iter_end) -> std::vector<int>
 {
   return akarithm::fold_each_n<2>(
