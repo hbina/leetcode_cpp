@@ -13,7 +13,7 @@ call_n(const F& f, AccTy acc, Iter i, std::index_sequence<Is...>)
   return f(acc, *(i + Is)...);
 }
 
-template<unsigned int N = 3,
+template<unsigned int N,
          typename IterTy,
          typename AccTy,
          typename F,

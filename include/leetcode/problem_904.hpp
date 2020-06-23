@@ -14,7 +14,7 @@
 
 namespace leetcode {
 
-template<typename FreqTy = std::size_t,
+template<typename FreqTy = int,
          typename IterTy,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
 static constexpr auto
@@ -87,7 +87,7 @@ totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
 }
 
 template<typename IterTy,
-         typename FreqTy = std::size_t,
+         typename FreqTy = int,
          typename ValueTy = typename std::iterator_traits<IterTy>::value_type>
 static constexpr auto
 totalFruit_LinearTime(IterTy iter_begin, IterTy iter_end) -> FreqTy
