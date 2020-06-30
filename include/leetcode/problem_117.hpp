@@ -8,13 +8,13 @@
 namespace leetcode {
 
 template<typename ValueTy>
-static constexpr akarithm::NodeNext<ValueTy>*
-connect(akarithm::NodeNext<ValueTy>* root)
+static constexpr aka::NodeNext<ValueTy>*
+connect(aka::NodeNext<ValueTy>* root)
 {
   if (!root)
     return nullptr;
 
-  akarithm::NodeNext<ValueTy>* nextmost = root->next;
+  aka::NodeNext<ValueTy>* nextmost = root->next;
   while (nextmost && (!nextmost->left && !nextmost->right) && nextmost->next) {
     nextmost = nextmost->next;
   }

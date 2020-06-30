@@ -12,14 +12,14 @@ namespace leetcode {
 
 template<typename ValueTy, typename BinaryPredicate>
 static std::vector<ValueTy>
-getAllElements_If(const akarithm::TreeNode<ValueTy>* lhs,
-                  const akarithm::TreeNode<ValueTy>* rhs,
+getAllElements_If(const aka::TreeNode<ValueTy>* lhs,
+                  const aka::TreeNode<ValueTy>* rhs,
                   const BinaryPredicate& pred)
 {
   std::vector<ValueTy> result;
 
-  akarithm::BSTIterator lhs_iterator = akarithm::BSTIterator(lhs);
-  akarithm::BSTIterator rhs_iterator = akarithm::BSTIterator(rhs);
+  aka::BSTIterator lhs_iterator = aka::BSTIterator(lhs);
+  aka::BSTIterator rhs_iterator = aka::BSTIterator(rhs);
 
   while (lhs_iterator.hasNext() && rhs_iterator.hasNext()) {
     //  Can be replaced with a Comp
@@ -38,8 +38,8 @@ getAllElements_If(const akarithm::TreeNode<ValueTy>* lhs,
 
 template<typename ValueTy>
 static std::vector<ValueTy>
-getAllElements(const akarithm::TreeNode<ValueTy>* lhs,
-               const akarithm::TreeNode<ValueTy>* rhs)
+getAllElements(const aka::TreeNode<ValueTy>* lhs,
+               const aka::TreeNode<ValueTy>* rhs)
 {
   return getAllElements_If(lhs, rhs, std::less{});
 }

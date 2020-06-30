@@ -4,20 +4,20 @@
 
 TEST_CASE("problem_206")
 {
-  akarithm::ListNode<>* input = new akarithm::ListNode<>(
+  aka::ListNode<>* input = new aka::ListNode<>(
     1,
-    new akarithm::ListNode<>(
+    new aka::ListNode<>(
       2,
-      new akarithm::ListNode<>(
-        3, new akarithm::ListNode<>(4, new akarithm::ListNode<>(5)))));
+      new aka::ListNode<>(
+        3, new aka::ListNode<>(4, new aka::ListNode<>(5)))));
 
-  const akarithm::ListNode<>* expected = new akarithm::ListNode<>(
+  const aka::ListNode<>* expected = new aka::ListNode<>(
     5,
-    new akarithm::ListNode<>(
+    new aka::ListNode<>(
       4,
-      new akarithm::ListNode<>(
-        3, new akarithm::ListNode<>(2, new akarithm::ListNode<>(1)))));
-  const akarithm::ListNode<>* result = leetcode::reverseList_iterative(input);
+      new aka::ListNode<>(
+        3, new aka::ListNode<>(2, new aka::ListNode<>(1)))));
+  const aka::ListNode<>* result = leetcode::reverseList_iterative(input);
   CHECK(*result == *expected);
   delete result;
   delete expected;
@@ -25,21 +25,21 @@ TEST_CASE("problem_206")
 
 TEST_CASE("problem_206")
 {
-  akarithm::ListNode<>* input = new akarithm::ListNode<>(
+  aka::ListNode<>* input = new aka::ListNode<>(
     1,
-    new akarithm::ListNode<>(
+    new aka::ListNode<>(
       2,
-      new akarithm::ListNode<>(
-        3, new akarithm::ListNode<>(4, new akarithm::ListNode<>(5)))));
+      new aka::ListNode<>(
+        3, new aka::ListNode<>(4, new aka::ListNode<>(5)))));
 
-  const akarithm::ListNode<>* expected = new akarithm::ListNode<>(
+  const aka::ListNode<>* expected = new aka::ListNode<>(
     5,
-    new akarithm::ListNode<>(
+    new aka::ListNode<>(
       4,
-      new akarithm::ListNode<>(
-        3, new akarithm::ListNode<>(2, new akarithm::ListNode<>(1)))));
+      new aka::ListNode<>(
+        3, new aka::ListNode<>(2, new aka::ListNode<>(1)))));
 
-  const akarithm::ListNode<>* result = leetcode::reverseList_iterative(input);
+  const aka::ListNode<>* result = leetcode::reverseList_iterative(input);
   CHECK(*result == *expected);
   delete result;
   delete expected;
@@ -47,11 +47,11 @@ TEST_CASE("problem_206")
 
 TEST_CASE("problem_206 single")
 {
-  akarithm::ListNode<>* input = new akarithm::ListNode<>(5);
+  aka::ListNode<>* input = new aka::ListNode<>(5);
 
-  const akarithm::ListNode<>* expected = new akarithm::ListNode<>(5);
+  const aka::ListNode<>* expected = new aka::ListNode<>(5);
 
-  const akarithm::ListNode<>* result = leetcode::reverseList_iterative(input);
+  const aka::ListNode<>* result = leetcode::reverseList_iterative(input);
 
   CHECK(*result == *expected);
   delete input;
@@ -60,9 +60,9 @@ TEST_CASE("problem_206 single")
 
 TEST_CASE("problem_206 single")
 {
-  akarithm::ListNode<>* input = new akarithm::ListNode<>(5);
-  const akarithm::ListNode<>* expected = new akarithm::ListNode<>(5);
-  const akarithm::ListNode<>* result = leetcode::reverseList_recursive(input);
+  aka::ListNode<>* input = new aka::ListNode<>(5);
+  const aka::ListNode<>* expected = new aka::ListNode<>(5);
+  const aka::ListNode<>* result = leetcode::reverseList_recursive(input);
   CHECK(*result == *expected);
   delete input;
   delete expected;

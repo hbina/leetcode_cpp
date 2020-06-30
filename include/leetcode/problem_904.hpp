@@ -32,13 +32,13 @@ totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
   }
 
   std::vector<GroupTy> group_frequency =
-    akarithm::group_by_minify(iter_begin, iter_end, std::equal_to{});
+    aka::group_by_minify(iter_begin, iter_end, std::equal_to{});
 
   if (group_frequency.size() == 1) {
     return group_frequency.back().second;
   }
 
-  std::vector<AdjDiffTy> adjacent_difference = akarithm::zip_fold(
+  std::vector<AdjDiffTy> adjacent_difference = aka::zip_fold(
     std::cbegin(group_frequency),
     std::cend(group_frequency),
     std::next(std::cbegin(group_frequency)),
@@ -58,7 +58,7 @@ totalFruit(IterTy iter_begin, IterTy iter_end) -> FreqTy
     });
 
   std::vector<std::vector<FreqTy>> group_adjacent_difference_fold =
-    akarithm::group_fold(
+    aka::group_fold(
       std::cbegin(adjacent_difference),
       std::cend(adjacent_difference),
       [](const AdjDiffTy& lhs, const AdjDiffTy& rhs) -> bool {

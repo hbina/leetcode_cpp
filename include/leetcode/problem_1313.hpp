@@ -13,7 +13,7 @@ template<typename IterTy,
 static auto
 decompressRLElist(IterTy iter_begin, IterTy iter_end) -> std::vector<int>
 {
-  return akarithm::fold_each_n<2>(
+  return aka::fold_each_n<2>(
     iter_begin,
     iter_end,
     std::vector<ValueTy>{},

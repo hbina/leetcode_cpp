@@ -10,10 +10,10 @@ namespace leetcode {
 
 template<typename ValueTy>
 static constexpr auto
-preorder_iterative(const akarithm::Node<ValueTy>* root) -> std::vector<ValueTy>
+preorder_iterative(const aka::Node<ValueTy>* root) -> std::vector<ValueTy>
 {
   std::vector<ValueTy> result = {};
-  std::deque<const akarithm::Node<ValueTy>*> s = { nullptr };
+  std::deque<const aka::Node<ValueTy>*> s = { nullptr };
 
   while (root) {
     result.emplace_back(root->val);
@@ -29,12 +29,12 @@ preorder_iterative(const akarithm::Node<ValueTy>* root) -> std::vector<ValueTy>
 
 template<typename ValueTy>
 std::vector<ValueTy>
-preorder_recursive(const akarithm::Node<ValueTy>* root)
+preorder_recursive(const aka::Node<ValueTy>* root)
 {
   std::vector<ValueTy> result = {};
   if (root) {
     result.emplace_back(root->val);
-    for (const akarithm::Node<ValueTy>* child : root->children) {
+    for (const aka::Node<ValueTy>* child : root->children) {
       std::vector<int> tmp = preorder_recursive(child);
       result.insert(result.end(), tmp.begin(), tmp.end());
     }

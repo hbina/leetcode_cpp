@@ -8,10 +8,10 @@ namespace leetcode {
 
 template<typename ValueTy>
 static constexpr auto
-searchBST(const akarithm::TreeNode<ValueTy>* root, const ValueTy& val)
-  -> const akarithm::TreeNode<ValueTy>*
+searchBST(const aka::TreeNode<ValueTy>* root, const ValueTy& val)
+  -> const aka::TreeNode<ValueTy>*
 {
-  return akarithm::bst_search(
+  return aka::bst_search(
     root,
     [&](const ValueTy& node) -> bool { return node == val; },
     [&](const ValueTy& node) -> bool { return node < val; });

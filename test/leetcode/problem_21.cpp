@@ -4,19 +4,19 @@
 
 TEST_CASE("problem_21")
 {
-  akarithm::ListNode<>* input_1 = new akarithm::ListNode<>(
-    1, new akarithm::ListNode<>(2, new akarithm::ListNode<>(4)));
-  akarithm::ListNode<>* input_2 = new akarithm::ListNode<>(
-    1, new akarithm::ListNode<>(3, new akarithm::ListNode<>(4)));
-  akarithm::ListNode<>* expected = new akarithm::ListNode<>(
+  aka::ListNode<>* input_1 = new aka::ListNode<>(
+    1, new aka::ListNode<>(2, new aka::ListNode<>(4)));
+  aka::ListNode<>* input_2 = new aka::ListNode<>(
+    1, new aka::ListNode<>(3, new aka::ListNode<>(4)));
+  aka::ListNode<>* expected = new aka::ListNode<>(
     1,
-    new akarithm::ListNode<>(
+    new aka::ListNode<>(
       1,
-      new akarithm::ListNode<>(
+      new aka::ListNode<>(
         2,
-        new akarithm::ListNode<>(
-          3, new akarithm::ListNode<>(4, new akarithm::ListNode<>(4))))));
-  akarithm::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
+        new aka::ListNode<>(
+          3, new aka::ListNode<>(4, new aka::ListNode<>(4))))));
+  aka::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
   CHECK(*expected == *result);
   delete result;
   delete expected;
@@ -24,20 +24,20 @@ TEST_CASE("problem_21")
 
 TEST_CASE("problem_21")
 {
-  akarithm::ListNode<>* input_1 = nullptr;
-  akarithm::ListNode<>* input_2 = nullptr;
-  akarithm::ListNode<>* expected = nullptr;
-  akarithm::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
+  aka::ListNode<>* input_1 = nullptr;
+  aka::ListNode<>* input_2 = nullptr;
+  aka::ListNode<>* expected = nullptr;
+  aka::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
   CHECK(expected == result);
 }
 
 TEST_CASE("problem_21")
 {
-  akarithm::ListNode<>* input_1 = new akarithm::ListNode<>(1);
-  akarithm::ListNode<>* input_2 = new akarithm::ListNode<>(3);
-  akarithm::ListNode<>* expected =
-    new akarithm::ListNode<>(1, new akarithm::ListNode<>(3));
-  akarithm::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
+  aka::ListNode<>* input_1 = new aka::ListNode<>(1);
+  aka::ListNode<>* input_2 = new aka::ListNode<>(3);
+  aka::ListNode<>* expected =
+    new aka::ListNode<>(1, new aka::ListNode<>(3));
+  aka::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
   CHECK(*expected == *result);
   delete result;
   delete expected;
@@ -45,10 +45,10 @@ TEST_CASE("problem_21")
 
 TEST_CASE("problem_21")
 {
-  akarithm::ListNode<>* input_1 = new akarithm::ListNode<>(1);
-  akarithm::ListNode<>* input_2 = nullptr;
-  akarithm::ListNode<>* expected = new akarithm::ListNode<>(1);
-  akarithm::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
+  aka::ListNode<>* input_1 = new aka::ListNode<>(1);
+  aka::ListNode<>* input_2 = nullptr;
+  aka::ListNode<>* expected = new aka::ListNode<>(1);
+  aka::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
   CHECK(*expected == *result);
   delete result;
   delete expected;
@@ -56,10 +56,10 @@ TEST_CASE("problem_21")
 
 TEST_CASE("problem_21")
 {
-  akarithm::ListNode<>* input_1 = nullptr;
-  akarithm::ListNode<>* input_2 = new akarithm::ListNode<>(1);
-  akarithm::ListNode<>* expected = new akarithm::ListNode<>(1);
-  akarithm::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
+  aka::ListNode<>* input_1 = nullptr;
+  aka::ListNode<>* input_2 = new aka::ListNode<>(1);
+  aka::ListNode<>* expected = new aka::ListNode<>(1);
+  aka::ListNode<>* result = leetcode::mergeTwoLists(input_1, input_2);
   CHECK(*expected == *result);
   delete result;
   delete expected;

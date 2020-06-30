@@ -6,8 +6,8 @@ namespace leetcode {
 
 template<typename ValueTy>
 bool
-isMirror(const akarithm::TreeNode<ValueTy>* lhs,
-         const akarithm::TreeNode<ValueTy>* rhs)
+isMirror(const aka::TreeNode<ValueTy>* lhs,
+         const aka::TreeNode<ValueTy>* rhs)
 {
   if (lhs == nullptr && rhs == nullptr)
     return true;
@@ -19,7 +19,7 @@ isMirror(const akarithm::TreeNode<ValueTy>* lhs,
 
 template<typename ValueTy>
 bool
-isSymmetric(const akarithm::TreeNode<ValueTy>* root)
+isSymmetric(const aka::TreeNode<ValueTy>* root)
 {
   return isMirror(root, root);
 }

@@ -20,7 +20,7 @@ minSetSize(IterTy iter_begin, IterTy iter_end) -> ValueTy
   std::vector<ValueTy> arr;
   std::copy(iter_begin, iter_end, std::back_inserter(arr));
   std::sort(std::begin(arr), std::end(arr));
-  auto tmp = akarithm::group_by_minify(
+  auto tmp = aka::group_by_minify(
     std::cbegin(arr),
     std::cend(arr),
     [](const ValueTy& lhs, const ValueTy& rhs) -> bool { return lhs == rhs; });

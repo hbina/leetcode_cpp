@@ -4,11 +4,11 @@
 
 TEST_CASE("problem_107")
 {
-  const akarithm::TreeNode<>* input = new akarithm::TreeNode<>(
+  const aka::TreeNode<>* input = new aka::TreeNode<>(
     3,
-    new akarithm::TreeNode<>(9),
-    new akarithm::TreeNode<>(
-      20, new akarithm::TreeNode<>(15), new akarithm::TreeNode<>(7)));
+    new aka::TreeNode<>(9),
+    new aka::TreeNode<>(
+      20, new aka::TreeNode<>(15), new aka::TreeNode<>(7)));
   const std::vector<std::vector<int>> expected = { { 3 },
                                                    { 9, 20 },
                                                    { 15, 7 } };

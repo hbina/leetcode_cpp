@@ -30,7 +30,7 @@ twoSum(IterTy iter_begin, IterTy iter_end, const ValueTy& target) -> ResultTy
             });
 
   // Find the sum pair using sliding window
-  auto [left, right] = akarithm::sliding_window(
+  auto [left, right] = aka::sliding_window(
     std::cbegin(indices),
     std::cend(indices),
     [&](const IndexTy& lhs, const IndexTy& rhs) -> bool {

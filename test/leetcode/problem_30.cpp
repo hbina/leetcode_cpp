@@ -14,5 +14,5 @@ TEST_CASE("problem_30 1")
   const std::vector<diff_type> expected = { 0, 9 };
   const std::vector<diff_type> result =
     leetcode::findSubstring(input_1, input_2);
-  // CHECK(akarithm::set_equality(expected, result));
+  // CHECK(aka::set_equality(expected, result));
 }

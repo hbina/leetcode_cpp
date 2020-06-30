@@ -22,10 +22,10 @@ class Codec
 {
 
 private:
-  static akarithm::TreeNode<ValueTy>* parse_data(const std::string& iter)
+  static aka::TreeNode<ValueTy>* parse_data(const std::string& iter)
   {
-    if (akarithm::is_number(iter)) {
-      return new akarithm::TreeNode<ValueTy>(std::stoi(iter));
+    if (aka::is_number(std::cbegin(iter), std::cend(iter))) {
+      return new aka::TreeNode<ValueTy>(std::stoi(iter));
     } else {
       return nullptr;
     }
@@ -34,16 +34,16 @@ private:
 public:
   //  Encodes a tree to a single string.
   //  TODO    ::  Rework this mess...
-  static std::string serialize(const akarithm::TreeNode<ValueTy>* root)
+  static std::string serialize(const aka::TreeNode<ValueTy>* root)
   {
     if (!root) {
       return "[]";
     }
     std::string result = "[";
-    std::vector<const akarithm::TreeNode<ValueTy>*> layers = { root };
+    std::vector<const aka::TreeNode<ValueTy>*> layers = { root };
     while (!layers.empty()) {
-      std::vector<const akarithm::TreeNode<ValueTy>*> next_layers;
-      for (const akarithm::TreeNode<ValueTy>* node : layers) {
+      std::vector<const aka::TreeNode<ValueTy>*> next_layers;
+      for (const aka::TreeNode<ValueTy>* node : layers) {
         result += std::to_string(node->val) + ",";
 
         if (node->left) {
@@ -72,18 +72,18 @@ public:
   //                  1
   //          2               null
   //      3       4       null    null
-  static akarithm::TreeNode<ValueTy>* deserialize(const std::string& data)
+  static aka::TreeNode<ValueTy>* deserialize(const std::string& data)
   {
     std::string skip_bracket = data.substr(1, data.length() - 2);
     std::string delimiter = ",";
     std::vector<std::string> deflatten_data =
       util::string::split<std::vector<std::string>>(skip_bracket, delimiter);
-    std::vector<akarithm::TreeNode<ValueTy>*> nodes;
+    std::vector<aka::TreeNode<ValueTy>*> nodes;
     std::transform(
       deflatten_data.cbegin(),
       deflatten_data.cend(),
       std::back_inserter(nodes),
-      [&](const std::string& data) -> akarithm::TreeNode<ValueTy>* {
+      [&](const std::string& data) -> aka::TreeNode<ValueTy>* {
         return Codec::parse_data(data);
       });
     std::size_t counter = 0;

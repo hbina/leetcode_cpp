@@ -19,7 +19,7 @@ countElements(IterTy begin, IterTy end) -> int
   std::vector<int> tmp;
   std::copy(begin, end, std::back_inserter(tmp));
   std::sort(std::begin(tmp), std::end(tmp));
-  auto grouped = akarithm::group_by_minify(
+  auto grouped = aka::group_by_minify(
     std::cbegin(tmp), std::cend(tmp), std::equal_to{});
   int result = 0;
   for (auto iter = 0;

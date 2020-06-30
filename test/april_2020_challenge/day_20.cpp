@@ -5,11 +5,11 @@
 TEST_CASE("april 2020 day 20 1")
 {
   const std::vector<int> input = { 8, 5, 1, 7, 10, 12 };
-  const akarithm::TreeNode<int>* expected = new akarithm::TreeNode<int>(
+  const aka::TreeNode<int>* expected = new aka::TreeNode<int>(
     8,
-    new akarithm::TreeNode<int>(
-      5, new akarithm::TreeNode<int>(1), new akarithm::TreeNode<int>(7)),
-    new akarithm::TreeNode<int>(10, nullptr, new akarithm::TreeNode<int>(12)));
+    new aka::TreeNode<int>(
+      5, new aka::TreeNode<int>(1), new aka::TreeNode<int>(7)),
+    new aka::TreeNode<int>(10, nullptr, new aka::TreeNode<int>(12)));
   const auto result = april2020::bstFromPreorder(input);
   CHECK(*expected == *result);
   delete expected;

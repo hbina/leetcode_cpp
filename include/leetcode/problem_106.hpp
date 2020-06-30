@@ -30,7 +30,7 @@ buildTreeTemplateInPost(const IterTy& inorder_begin,
                         const IterTy& inorder_end,
                         const IterTy& postorder_begin,
                         const IterTy& postorder_end)
-  -> akarithm::TreeNode<typename std::iterator_traits<IterTy>::value_type>*
+  -> aka::TreeNode<typename std::iterator_traits<IterTy>::value_type>*
 {
   using ValueTy = typename std::iterator_traits<IterTy>::value_type;
 
@@ -40,8 +40,8 @@ buildTreeTemplateInPost(const IterTy& inorder_begin,
   std::size_t dividing_index =
     get_dividing_index(inorder_begin, inorder_end, *(postorder_end - 1));
 
-  akarithm::TreeNode<ValueTy>* root =
-    new akarithm::TreeNode<ValueTy>(*(inorder_begin + dividing_index));
+  aka::TreeNode<ValueTy>* root =
+    new aka::TreeNode<ValueTy>(*(inorder_begin + dividing_index));
 
   root->left = buildTreeTemplateInPost(inorder_begin,
                                        inorder_begin + dividing_index,
@@ -60,7 +60,7 @@ template<typename ValueTy>
 static constexpr auto
 buildTreeInPost(const std::vector<ValueTy>& inorder,
                 const std::vector<ValueTy>& postorder)
-  -> akarithm::TreeNode<ValueTy>*
+  -> aka::TreeNode<ValueTy>*
 {
   return buildTreeTemplateInPost(
     inorder.cbegin(), inorder.cend(), postorder.cbegin(), postorder.cend());

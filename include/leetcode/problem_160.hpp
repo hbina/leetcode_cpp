@@ -8,15 +8,15 @@ namespace leetcode {
 
 template<typename ValueTy>
 static constexpr auto
-getIntersectionNode(akarithm::ListNode<ValueTy>* headA,
-                    akarithm::ListNode<ValueTy>* headB)
-  -> akarithm::ListNode<ValueTy>*
+getIntersectionNode(aka::ListNode<ValueTy>* headA,
+                    aka::ListNode<ValueTy>* headB)
+  -> aka::ListNode<ValueTy>*
 {
   if (!headA || !headB) {
     return nullptr;
   }
-  akarithm::ListNode<ValueTy>* pointerA = headA;
-  akarithm::ListNode<ValueTy>* pointerB = headB;
+  aka::ListNode<ValueTy>* pointerA = headA;
+  aka::ListNode<ValueTy>* pointerB = headB;
 
   // Recalibrate pointers
   int both_reverted = 2;

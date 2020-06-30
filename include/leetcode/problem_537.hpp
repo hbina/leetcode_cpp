@@ -6,7 +6,7 @@ namespace leetcode {
 
 template<typename ValueTy>
 bool
-hasPathSum(const akarithm::TreeNode<ValueTy>* root, int sum)
+hasPathSum(const aka::TreeNode<ValueTy>* root, int sum)
 {
   if (root == nullptr) {
     return false;

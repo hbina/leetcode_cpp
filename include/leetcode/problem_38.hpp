@@ -15,7 +15,7 @@ countAndSay(const NumType& n) -> std::string
 {
   std::string result = "1";
   for (auto a = 1; a < n; a++) {
-    const auto grouped = akarithm::string::group_by(
+    const auto grouped = aka::string::group_by(
       std::cbegin(result),
       std::cend(result),
       [](const std::string& lhs, const auto& rhs) -> bool {

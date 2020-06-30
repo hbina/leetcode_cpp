@@ -4,11 +4,11 @@
 
 TEST_CASE("problem_145")
 {
-  const akarithm::TreeNode<>* input = new akarithm::TreeNode<>(
+  const aka::TreeNode<>* input = new aka::TreeNode<>(
     1,
     nullptr,
-    new akarithm::TreeNode<>(
-      2, new akarithm::TreeNode<>(3, nullptr, nullptr), nullptr));
+    new aka::TreeNode<>(
+      2, new aka::TreeNode<>(3, nullptr, nullptr), nullptr));
   const std::vector<int> expected = { 3, 2, 1 };
   const std::vector<int> result = leetcode::postorderTraversal(input);
   CHECK(result == expected);

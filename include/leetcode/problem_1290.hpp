@@ -6,7 +6,7 @@ namespace leetcode {
 
 template<typename ValueTy>
 std::size_t
-getDecimalValue(const akarithm::ListNode<ValueTy>* head)
+getDecimalValue(const aka::ListNode<ValueTy>* head)
 {
   std::size_t result = 0;
   while (head) {

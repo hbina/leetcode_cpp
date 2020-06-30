@@ -11,7 +11,7 @@ TEST_CASE("problem_1 1")
   const std::vector<int> expected = { 0, 1 };
   const std::vector<int> result =
     leetcode::twoSum(std::cbegin(input_1), std::cend(input_1), input_2);
-  CHECK(akarithm::set_equality(std::cbegin(expected),
+  CHECK(aka::set_equality(std::cbegin(expected),
                                std::cend(expected),
                                std::cbegin(result),
                                std::cend(result)));
@@ -24,7 +24,7 @@ TEST_CASE("problem_1 2")
   const std::vector<int> expected = { 1, 2 };
   const std::vector<int> result =
     leetcode::twoSum(std::cbegin(input_1), std::cend(input_1), input_2);
-  CHECK(akarithm::set_equality(std::cbegin(expected),
+  CHECK(aka::set_equality(std::cbegin(expected),
                                std::cend(expected),
                                std::cbegin(result),
                                std::cend(result)));
@@ -37,7 +37,7 @@ TEST_CASE("problem_1 3")
   const std::vector<int> expected = { 0, 1 };
   const std::vector<int> result =
     leetcode::twoSum(std::cbegin(input_1), std::cend(input_1), input_2);
-  CHECK(akarithm::set_equality(std::cbegin(expected),
+  CHECK(aka::set_equality(std::cbegin(expected),
                                std::cend(expected),
                                std::cbegin(result),
                                std::cend(result)));

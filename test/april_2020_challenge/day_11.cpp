@@ -4,11 +4,11 @@
 
 TEST_CASE("april 2020 day 11 1")
 {
-  akarithm::TreeNode<>* input = new akarithm::TreeNode<>(
+  aka::TreeNode<>* input = new aka::TreeNode<>(
     1,
-    new akarithm::TreeNode<>(
-      2, new akarithm::TreeNode<>(4), new akarithm::TreeNode<>(5)),
-    new akarithm::TreeNode<>(3));
+    new aka::TreeNode<>(
+      2, new aka::TreeNode<>(4), new aka::TreeNode<>(5)),
+    new aka::TreeNode<>(3));
   const int expected = 3;
   const auto result = april2020::diameterOfBinaryTree(input);
   CHECK(expected == result);
@@ -17,8 +17,8 @@ TEST_CASE("april 2020 day 11 1")
 
 TEST_CASE("april 2020 day 11 2")
 {
-  akarithm::TreeNode<>* input =
-    new akarithm::TreeNode<>(1, new akarithm::TreeNode<>(2), nullptr);
+  aka::TreeNode<>* input =
+    new aka::TreeNode<>(1, new aka::TreeNode<>(2), nullptr);
   const int expected = 1;
   const auto result = april2020::diameterOfBinaryTree(input);
   CHECK(expected == result);
@@ -27,7 +27,7 @@ TEST_CASE("april 2020 day 11 2")
 
 TEST_CASE("april 2020 day 11 3")
 {
-  akarithm::TreeNode<>* input = nullptr;
+  aka::TreeNode<>* input = nullptr;
   const int expected = 0;
   const auto result = april2020::diameterOfBinaryTree(input);
   CHECK(expected == result);

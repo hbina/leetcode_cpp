@@ -23,7 +23,7 @@ get_dividing_index(const IterTy& preorder_begin,
 }
 
 template<typename IterTy>
-static constexpr akarithm::TreeNode<
+static constexpr aka::TreeNode<
   typename std::iterator_traits<IterTy>::value_type>*
 buildTreeTemplatePreIn(const IterTy& preorder_begin,
                        const IterTy& preorder_end,
@@ -38,8 +38,8 @@ buildTreeTemplatePreIn(const IterTy& preorder_begin,
   std::size_t dividing_index =
     get_dividing_index(inorder_begin, inorder_end, *(preorder_begin));
 
-  akarithm::TreeNode<ValueTy>* root =
-    new akarithm::TreeNode<ValueTy>(*preorder_begin);
+  aka::TreeNode<ValueTy>* root =
+    new aka::TreeNode<ValueTy>(*preorder_begin);
 
   root->left = buildTreeTemplatePreIn(preorder_begin + 1,
                                       preorder_begin + dividing_index + 1,
@@ -55,7 +55,7 @@ buildTreeTemplatePreIn(const IterTy& preorder_begin,
 namespace leetcode {
 
 template<typename ValueTy>
-static constexpr akarithm::TreeNode<ValueTy>*
+static constexpr aka::TreeNode<ValueTy>*
 buildTreePreIn(const std::vector<ValueTy>& preorder,
                const std::vector<ValueTy>& inorder)
 {

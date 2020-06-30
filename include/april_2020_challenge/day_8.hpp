@@ -8,8 +8,8 @@ namespace april2020 {
 // endlessly.
 template<typename ValueTy>
 static constexpr auto
-middleNode(akarithm::ListNode<ValueTy>* const head)
-  -> akarithm::ListNode<ValueTy>*
+middleNode(aka::ListNode<ValueTy>* const head)
+  -> aka::ListNode<ValueTy>*
 {
   auto* fastPtr = head;
   auto* slowPtr = head;

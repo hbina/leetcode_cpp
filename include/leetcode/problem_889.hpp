@@ -18,16 +18,16 @@ constructFromPrePostTemplate(const IterTy& preorder_begin,
                              const IterTy& preorder_end,
                              const IterTy& postorder_begin,
                              const IterTy& postorder_end)
-  -> akarithm::TreeNode<ValueTy>*
+  -> aka::TreeNode<ValueTy>*
 {
   if (preorder_begin == preorder_end && postorder_begin == postorder_end)
     return nullptr;
   else if (std::distance(preorder_begin, preorder_end) == 1 &&
            std::distance(postorder_begin, postorder_end) == 1) {
-    return new akarithm::TreeNode<ValueTy>(*preorder_begin);
+    return new aka::TreeNode<ValueTy>(*preorder_begin);
   } else {
-    akarithm::TreeNode<ValueTy>* root =
-      new akarithm::TreeNode<ValueTy>(*preorder_begin);
+    aka::TreeNode<ValueTy>* root =
+      new aka::TreeNode<ValueTy>(*preorder_begin);
 
     // Figure out the next element in preorder
     ValueTy next_preorder_element = *(preorder_begin + 1);
@@ -56,7 +56,7 @@ template<typename ValueTy>
 static constexpr auto
 constructFromPrePost(const std::vector<ValueTy>& preorder,
                      const std::vector<ValueTy>& postorder)
-  -> akarithm::TreeNode<ValueTy>*
+  -> aka::TreeNode<ValueTy>*
 {
   return constructFromPrePostTemplate(
     preorder.cbegin(), preorder.cend(), postorder.cbegin(), postorder.cend());

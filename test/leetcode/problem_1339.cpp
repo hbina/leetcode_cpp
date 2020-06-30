@@ -4,14 +4,14 @@
 
 TEST_CASE("problem_5330 1")
 {
-  const akarithm::TreeNode<>* input = new akarithm::TreeNode<>(
+  const aka::TreeNode<>* input = new aka::TreeNode<>(
     1,
     nullptr,
-    new akarithm::TreeNode<>(
+    new aka::TreeNode<>(
       2,
-      new akarithm::TreeNode<>(3),
-      new akarithm::TreeNode<>(
-        4, new akarithm::TreeNode(5), new akarithm::TreeNode<>(6))));
+      new aka::TreeNode<>(3),
+      new aka::TreeNode<>(
+        4, new aka::TreeNode(5), new aka::TreeNode<>(6))));
   const int expected = 90;
   // const int result = leetcode::maxProduct(input);
   // CHECK(expected == result);

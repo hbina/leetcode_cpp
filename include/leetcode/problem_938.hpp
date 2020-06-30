@@ -6,7 +6,7 @@ namespace leetcode {
 
 template<typename ValueTy>
 static constexpr int
-rangeSumBST_recursion(const akarithm::TreeNode<ValueTy>* root,
+rangeSumBST_recursion(const aka::TreeNode<ValueTy>* root,
                       const ValueTy& L,
                       const ValueTy& R)
 {

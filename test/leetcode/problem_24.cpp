@@ -4,15 +4,15 @@
 
 TEST_CASE("problem_24 1")
 {
-  akarithm::ListNode<>* input = new akarithm::ListNode<>(
+  aka::ListNode<>* input = new aka::ListNode<>(
     1,
-    new akarithm::ListNode<>(
-      2, new akarithm::ListNode<>(3, new akarithm::ListNode<>(4))));
-  const akarithm::ListNode<>* expected = new akarithm::ListNode<>(
+    new aka::ListNode<>(
+      2, new aka::ListNode<>(3, new aka::ListNode<>(4))));
+  const aka::ListNode<>* expected = new aka::ListNode<>(
     2,
-    new akarithm::ListNode<>(
-      1, new akarithm::ListNode<>(4, new akarithm::ListNode<>(3))));
-  akarithm::ListNode<>* result = leetcode::swapPairs(input);
+    new aka::ListNode<>(
+      1, new aka::ListNode<>(4, new aka::ListNode<>(3))));
+  aka::ListNode<>* result = leetcode::swapPairs(input);
   CHECK(*expected == *result);
   delete expected;
   delete result;
@@ -20,11 +20,11 @@ TEST_CASE("problem_24 1")
 
 TEST_CASE("problem_24 2")
 {
-  akarithm::ListNode<>* input =
-    new akarithm::ListNode<>(1, new akarithm::ListNode<>(2));
-  const akarithm::ListNode<>* expected =
-    new akarithm::ListNode<>(2, new akarithm::ListNode<>(1));
-  akarithm::ListNode<>* result = leetcode::swapPairs(input);
+  aka::ListNode<>* input =
+    new aka::ListNode<>(1, new aka::ListNode<>(2));
+  const aka::ListNode<>* expected =
+    new aka::ListNode<>(2, new aka::ListNode<>(1));
+  aka::ListNode<>* result = leetcode::swapPairs(input);
   CHECK(*expected == *result);
   delete expected;
   delete result;
@@ -32,9 +32,9 @@ TEST_CASE("problem_24 2")
 
 TEST_CASE("problem_24 3")
 {
-  akarithm::ListNode<>* input = new akarithm::ListNode<>(1);
-  const akarithm::ListNode<>* expected = new akarithm::ListNode<>(1);
-  akarithm::ListNode<>* result = leetcode::swapPairs(input);
+  aka::ListNode<>* input = new aka::ListNode<>(1);
+  const aka::ListNode<>* expected = new aka::ListNode<>(1);
+  aka::ListNode<>* result = leetcode::swapPairs(input);
   CHECK(*expected == *result);
   delete expected;
   delete result;
@@ -42,9 +42,9 @@ TEST_CASE("problem_24 3")
 
 TEST_CASE("problem_24 4")
 {
-  akarithm::ListNode<>* input = nullptr;
-  const akarithm::ListNode<>* expected = nullptr;
-  akarithm::ListNode<>* result = leetcode::swapPairs(input);
+  aka::ListNode<>* input = nullptr;
+  const aka::ListNode<>* expected = nullptr;
+  aka::ListNode<>* result = leetcode::swapPairs(input);
   CHECK(expected == result);
   delete expected;
   delete result;

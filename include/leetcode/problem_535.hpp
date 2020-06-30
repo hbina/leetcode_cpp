@@ -6,7 +6,7 @@ namespace leetcode {
 
 template<typename ValueTy>
 std::size_t
-maxDepth(const akarithm::TreeNode<ValueTy>* root)
+maxDepth(const aka::TreeNode<ValueTy>* root)
 {
   if (!root) {
     return 0;

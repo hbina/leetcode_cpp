@@ -12,12 +12,12 @@ namespace april2020 {
 template<typename ValueTy>
 static auto
 bstFromPreorder(const std::vector<ValueTy>& preorder)
-  -> akarithm::TreeNode<ValueTy>*
+  -> aka::TreeNode<ValueTy>*
 {
-  akarithm::TreeNode<ValueTy>* result =
-    new akarithm::TreeNode<ValueTy>(preorder.front());
+  aka::TreeNode<ValueTy>* result =
+    new aka::TreeNode<ValueTy>(preorder.front());
 
-  std::stack<akarithm::TreeNode<ValueTy>*> stack;
+  std::stack<aka::TreeNode<ValueTy>*> stack;
   stack.emplace(result);
 
   auto begin = std::next(std::cbegin(preorder));
@@ -28,7 +28,7 @@ bstFromPreorder(const std::vector<ValueTy>& preorder)
     stack.pop();
 
     if (*begin < top->val) {
-      top->left = new akarithm::TreeNode<int>(*begin);
+      top->left = new aka::TreeNode<int>(*begin);
       stack.emplace(top);
       stack.emplace(top->left);
     } else {
@@ -36,7 +36,7 @@ bstFromPreorder(const std::vector<ValueTy>& preorder)
         top = stack.top();
         stack.pop();
       }
-      top->right = new akarithm::TreeNode<int>(*begin);
+      top->right = new aka::TreeNode<int>(*begin);
       stack.emplace(top->right);
     }
     begin = std::next(begin);

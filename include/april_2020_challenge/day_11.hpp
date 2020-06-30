@@ -12,10 +12,10 @@ namespace april2020 {
 
 template<typename ValueTy>
 static auto
-diameterOfBinaryTree(const akarithm::TreeNode<ValueTy>* root) -> int
+diameterOfBinaryTree(const aka::TreeNode<ValueTy>* root) -> int
 {
   // Prelude
-  using PointerTy = typename akarithm::TreeNode<ValueTy> const*;
+  using PointerTy = typename aka::TreeNode<ValueTy> const*;
 
   std::stack<PointerTy> stack;
   std::unordered_map<PointerTy, int> map;

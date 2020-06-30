@@ -4,12 +4,12 @@
 
 TEST_CASE("problem_589 -- iterative")
 {
-  const akarithm::Node<>* input = new akarithm::Node<>(
+  const aka::Node<>* input = new aka::Node<>(
     1,
-    { new akarithm::Node<>(
-        3, { new akarithm::Node<>(5), new akarithm::Node<>(6) }),
-      new akarithm::Node<>(2),
-      new akarithm::Node<>(4) });
+    { new aka::Node<>(
+        3, { new aka::Node<>(5), new aka::Node<>(6) }),
+      new aka::Node<>(2),
+      new aka::Node<>(4) });
   const std::vector<int> expected = { 1, 3, 5, 6, 2, 4 };
   const std::vector<int> result = leetcode::preorder_iterative(input);
   CHECK(expected == result);
@@ -18,12 +18,12 @@ TEST_CASE("problem_589 -- iterative")
 
 TEST_CASE("problem_589 -- recursive")
 {
-  const akarithm::Node<>* input = new akarithm::Node<>(
+  const aka::Node<>* input = new aka::Node<>(
     1,
-    { new akarithm::Node<>(
-        3, { new akarithm::Node<>(5), new akarithm::Node<>(6) }),
-      new akarithm::Node<>(2),
-      new akarithm::Node<>(4) });
+    { new aka::Node<>(
+        3, { new aka::Node<>(5), new aka::Node<>(6) }),
+      new aka::Node<>(2),
+      new aka::Node<>(4) });
   const std::vector<int> expected = { 1, 3, 5, 6, 2, 4 };
   const std::vector<int> result = leetcode::preorder_recursive(input);
   CHECK(expected == result);

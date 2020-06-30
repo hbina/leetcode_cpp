@@ -18,7 +18,7 @@ isHappy(IntTy n) -> bool
   // FIXME: There ought to be a solution that does not involve while loop.
   // Namely, there could be an input s.t. it produce unique keys each time.
   while (true) {
-    n = akarithm::digit_fold(n, 0, [](const IntTy acc, const IntTy x) -> IntTy {
+    n = aka::digit_fold(n, 0, [](const IntTy acc, const IntTy x) -> IntTy {
       return acc + x * x;
     });
     if (n == 1) {

@@ -4,12 +4,12 @@
 
 TEST_CASE("problem_297")
 {
-  akarithm::TreeNode<int>* input = new akarithm::TreeNode<>(
+  aka::TreeNode<int>* input = new aka::TreeNode<>(
     1,
-    new akarithm::TreeNode<>(2),
-    new akarithm::TreeNode<>(
-      3, new akarithm::TreeNode<>(4), new akarithm::TreeNode<>(5)));
-  // akarithm::TreeNode<int> *result =
+    new aka::TreeNode<>(2),
+    new aka::TreeNode<>(
+      3, new aka::TreeNode<>(4), new aka::TreeNode<>(5)));
+  // aka::TreeNode<int> *result =
   // Codec<int>::deserialize(Codec<int>::serialize(input)); CHECK(*input ==
   // *result);
   delete input;

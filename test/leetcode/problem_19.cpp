@@ -4,18 +4,18 @@
 
 TEST_CASE("problem_19")
 {
-  akarithm::ListNode<>* input_1 = new akarithm::ListNode<>(
+  aka::ListNode<>* input_1 = new aka::ListNode<>(
     1,
-    new akarithm::ListNode<>(
+    new aka::ListNode<>(
       2,
-      new akarithm::ListNode<>(
-        3, new akarithm::ListNode<>(4, new akarithm::ListNode<>(5)))));
+      new aka::ListNode<>(
+        3, new aka::ListNode<>(4, new aka::ListNode<>(5)))));
   int input_2 = 2;
-  akarithm::ListNode<>* expected = new akarithm::ListNode<>(
+  aka::ListNode<>* expected = new aka::ListNode<>(
     1,
-    new akarithm::ListNode<>(
-      2, new akarithm::ListNode<>(3, new akarithm::ListNode<>(5))));
-  akarithm::ListNode<>* result = leetcode::removeNthFromEnd(input_1, input_2);
+    new aka::ListNode<>(
+      2, new aka::ListNode<>(3, new aka::ListNode<>(5))));
+  aka::ListNode<>* result = leetcode::removeNthFromEnd(input_1, input_2);
   CHECK(*expected == *result);
   delete expected;
   delete result;
@@ -23,10 +23,10 @@ TEST_CASE("problem_19")
 
 TEST_CASE("problem_19")
 {
-  akarithm::ListNode<>* input_1 = new akarithm::ListNode(1);
+  aka::ListNode<>* input_1 = new aka::ListNode(1);
   int input_2 = 1;
-  akarithm::ListNode<>* expected = nullptr;
-  akarithm::ListNode<>* result = leetcode::removeNthFromEnd(input_1, input_2);
+  aka::ListNode<>* expected = nullptr;
+  aka::ListNode<>* result = leetcode::removeNthFromEnd(input_1, input_2);
   CHECK(expected == result);
   delete expected;
   delete result;

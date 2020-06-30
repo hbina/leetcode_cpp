@@ -21,7 +21,7 @@ shuffle(IterTy iter_begin, IterTy iter_end, const int n)
   std::vector<int> result;
   result.reserve(size);
 
-  akarithm::zip(iter_begin,
+  aka::zip(iter_begin,
                 std::next(iter_begin, n),
                 std::next(iter_begin, n),
                 iter_end,

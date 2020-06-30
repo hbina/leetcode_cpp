@@ -14,7 +14,7 @@ strStr(const IterTy haystack_begin,
   if (std::distance(needle_begin, needle_end) == 0) {
     return 0;
   }
-  const IterTy result = akarithm::find_range(
+  const IterTy result = aka::find_range(
     haystack_begin, haystack_end, needle_begin, needle_end);
   return result == haystack_end
            ? -1

@@ -8,10 +8,10 @@ namespace leetcode {
 
 // Can be generalized further
 template<typename ValueTy>
-static constexpr std::tuple<akarithm::ListNode<ValueTy>*,
-                            akarithm::ListNode<ValueTy>*,
-                            akarithm::ListNode<ValueTy>*>
-advanceZip(akarithm::ListNode<ValueTy>* lhs, akarithm::ListNode<ValueTy>* rhs)
+static constexpr std::tuple<aka::ListNode<ValueTy>*,
+                            aka::ListNode<ValueTy>*,
+                            aka::ListNode<ValueTy>*>
+advanceZip(aka::ListNode<ValueTy>* lhs, aka::ListNode<ValueTy>* rhs)
 {
   if (lhs && rhs) {
     if (lhs->val < rhs->val) {
@@ -29,13 +29,13 @@ advanceZip(akarithm::ListNode<ValueTy>* lhs, akarithm::ListNode<ValueTy>* rhs)
 }
 
 template<typename ValueTy>
-static constexpr akarithm::ListNode<ValueTy>*
-mergeTwoLists(akarithm::ListNode<ValueTy>* lhs,
-              akarithm::ListNode<ValueTy>* rhs)
+static constexpr aka::ListNode<ValueTy>*
+mergeTwoLists(aka::ListNode<ValueTy>* lhs,
+              aka::ListNode<ValueTy>* rhs)
 {
   if (lhs && rhs) {
     auto [root, lhs_iter, rhs_iter] = advanceZip(lhs, rhs);
-    akarithm::ListNode<ValueTy>* iter = root;
+    aka::ListNode<ValueTy>* iter = root;
     while (lhs_iter || rhs_iter) {
       auto [iter_next, lhs_next, rhs_next] = advanceZip(lhs_iter, rhs_iter);
       iter->next = iter_next;

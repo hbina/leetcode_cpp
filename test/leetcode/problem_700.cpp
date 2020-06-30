@@ -4,10 +4,10 @@
 
 TEST_CASE("problem_700")
 {
-  akarithm::TreeNode<>* expected = new akarithm::TreeNode<>(
-    2, new akarithm::TreeNode<>(1), new akarithm::TreeNode<>(3));
-  const akarithm::TreeNode<>* input =
-    new akarithm::TreeNode<>(4, expected, new akarithm::TreeNode<>(7));
+  aka::TreeNode<>* expected = new aka::TreeNode<>(
+    2, new aka::TreeNode<>(1), new aka::TreeNode<>(3));
+  const aka::TreeNode<>* input =
+    new aka::TreeNode<>(4, expected, new aka::TreeNode<>(7));
   const auto result = leetcode::searchBST(input, 2);
   CHECK(expected == result);
   delete input;

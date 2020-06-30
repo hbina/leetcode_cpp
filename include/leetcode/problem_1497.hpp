@@ -1,6 +1,7 @@
 #pragma once
 
 #include <algorithm>
+#include <array>
 #include <iterator>
 #include <numeric>
 #include <unordered_map>
@@ -18,6 +19,7 @@ canArrange(IterTy iter_begin, IterTy iter_end, const ValueTy& k) -> bool
   // TODO: This kind of stuff ought to be a helper function already...
   // Avoid ITM anti-pattern.
   std::unordered_map<ValueTy, FreqTy> freq;
+  freq.reserve(k);
   while (iter_begin != iter_end) {
     const ValueTy value = *iter_begin % k;
     freq[value > 0 ? value : value + k]++;
@@ -25,7 +27,7 @@ canArrange(IterTy iter_begin, IterTy iter_end, const ValueTy& k) -> bool
   }
   freq[k] = freq[0];
 
-  if (k % 2 == 0 && freq[k] % 2 != 0) {
+  if (k % 2 == 0 && freq[k / 2] % 2 != 0) {
     return false;
   }
 
@@ -33,6 +35,7 @@ canArrange(IterTy iter_begin, IterTy iter_end, const ValueTy& k) -> bool
     return false;
   }
 
+  // Actually a sliding window...
   const bool result =
     std::accumulate(std::cbegin(freq),
                     std::cend(freq),

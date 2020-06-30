@@ -6,7 +6,7 @@ namespace leetcode {
 
 template<typename ValueTy>
 static constexpr void
-bstToGst_Recursive(akarithm::TreeNode<ValueTy>* root, ValueTy& accumulator)
+bstToGst_Recursive(aka::TreeNode<ValueTy>* root, ValueTy& accumulator)
 {
   if (root->right)
     bstToGst_Recursive(root->right, accumulator);
@@ -17,8 +17,8 @@ bstToGst_Recursive(akarithm::TreeNode<ValueTy>* root, ValueTy& accumulator)
 }
 
 template<typename ValueTy>
-static constexpr akarithm::TreeNode<ValueTy>*
-bstToGst(akarithm::TreeNode<ValueTy>* root)
+static constexpr aka::TreeNode<ValueTy>*
+bstToGst(aka::TreeNode<ValueTy>* root)
 {
   ValueTy init = 0;
   bstToGst_Recursive(root, init);
