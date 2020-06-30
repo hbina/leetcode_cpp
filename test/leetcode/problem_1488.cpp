@@ -29,7 +29,7 @@ TEST_CASE("problem_1488 3")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_1488 1")
+TEST_CASE("problem_1488 4")
 {
   const std::vector<int> input = { 69, 0, 0, 0, 69 };
   const std::vector<int> expected = { -1, 69, 1, 1, -1 };
@@ -38,7 +38,7 @@ TEST_CASE("problem_1488 1")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_1488 1")
+TEST_CASE("problem_1488 5")
 {
   const std::vector<int> input = { 10, 20, 20 };
   const std::vector<int> expected = {};

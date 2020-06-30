@@ -5,7 +5,7 @@
 #include <list>
 #include <vector>
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 1")
 {
   const std::vector<int> input_1 = { 4, 5, 6, 7, 0, 1, 2 };
   const int input_2 = 0;
@@ -14,7 +14,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 2")
 {
   const std::vector<int> input_1 = { 4, 5, 6, 7, 0, 1, 2 };
   const int input_2 = 3;
@@ -23,7 +23,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 3")
 {
   const std::list<int> input_1 = { 4, 5, 6, 7, 0, 1, 2 };
   const int input_2 = 0;
@@ -32,7 +32,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 4")
 {
   const std::list<int> input_1 = { 4, 5, 6, 7, 0, 1, 2 };
   const int input_2 = 3;
@@ -41,7 +41,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 5")
 {
   const std::vector<int> input_1;
   const int input_2 = 3;
@@ -50,7 +50,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 6")
 {
   const std::list<int> input_1;
   const int input_2 = 3;
@@ -59,7 +59,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 7")
 {
   const std::vector<int> input_1 = { 1, 3 };
   const int input_2 = 2;
@@ -68,7 +68,7 @@ TEST_CASE("problem_33")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_33")
+TEST_CASE("problem_33 8")
 {
   const std::vector<int> input_1 = { 2, 3 };
   const int input_2 = 0;

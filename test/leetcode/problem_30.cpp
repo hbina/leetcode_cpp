@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-TEST_CASE("problem_30")
+TEST_CASE("problem_30 1")
 {
   using diff_type = std::vector<std::string>::difference_type;
   const std::string input_1 = "barfoothefoobarman";

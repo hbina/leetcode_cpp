@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-TEST_CASE("problem_28")
+TEST_CASE("problem_28 1")
 {
   const std::string input_1 = "hello";
   const std::string input_2 = "ll";
@@ -17,7 +17,7 @@ TEST_CASE("problem_28")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_28")
+TEST_CASE("problem_28 2")
 {
   const std::string input_1 = "aaaaa";
   const std::string input_2 = "bba";
@@ -29,7 +29,7 @@ TEST_CASE("problem_28")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_28")
+TEST_CASE("problem_28 3")
 {
   const std::string input_1 = "";
   const std::string input_2 = "";
@@ -41,7 +41,7 @@ TEST_CASE("problem_28")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_28")
+TEST_CASE("problem_28 4")
 {
   const std::string input_1 = "aaaaa";
   const std::string input_2 = "";

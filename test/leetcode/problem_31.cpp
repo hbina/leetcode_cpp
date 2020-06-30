@@ -4,7 +4,7 @@
 
 #include <vector>
 
-TEST_CASE("problem_31")
+TEST_CASE("problem_31 1")
 {
   std::vector<int> input = { 1, 2, 3 };
   const std::vector<int> expected = { 1, 3, 2 };

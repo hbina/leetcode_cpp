@@ -2,7 +2,7 @@
 
 #include "leetcode/problem_24.hpp"
 
-TEST_CASE("problem_24")
+TEST_CASE("problem_24 1")
 {
   akarithm::ListNode<>* input = new akarithm::ListNode<>(
     1,
@@ -18,7 +18,7 @@ TEST_CASE("problem_24")
   delete result;
 }
 
-TEST_CASE("problem_24")
+TEST_CASE("problem_24 2")
 {
   akarithm::ListNode<>* input =
     new akarithm::ListNode<>(1, new akarithm::ListNode<>(2));
@@ -30,7 +30,7 @@ TEST_CASE("problem_24")
   delete result;
 }
 
-TEST_CASE("problem_24")
+TEST_CASE("problem_24 3")
 {
   akarithm::ListNode<>* input = new akarithm::ListNode<>(1);
   const akarithm::ListNode<>* expected = new akarithm::ListNode<>(1);
@@ -40,7 +40,7 @@ TEST_CASE("problem_24")
   delete result;
 }
 
-TEST_CASE("problem_24")
+TEST_CASE("problem_24 4")
 {
   akarithm::ListNode<>* input = nullptr;
   const akarithm::ListNode<>* expected = nullptr;

@@ -5,7 +5,7 @@
 #include <list>
 #include <vector>
 
-TEST_CASE("problem_27")
+TEST_CASE("problem_27 1")
 {
   std::vector<int> input_1 = { 3, 2, 2, 3 };
   const int input_2 = 3;
@@ -14,7 +14,7 @@ TEST_CASE("problem_27")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_27")
+TEST_CASE("problem_27 2")
 {
   std::vector<int> input_1 = { 0, 1, 2, 2, 3, 0, 4, 2 };
   const int input_2 = 2;
@@ -23,7 +23,7 @@ TEST_CASE("problem_27")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_27")
+TEST_CASE("problem_27 3")
 {
   std::vector<int> input_1 = { 1, 2, 3, 4 };
   const int input_2 = 5;
@@ -32,7 +32,7 @@ TEST_CASE("problem_27")
   CHECK(expected == result);
 }
 
-TEST_CASE("problem_27")
+TEST_CASE("problem_27 4")
 {
   std::vector<int> input_1;
   const int input_2 = 5;
