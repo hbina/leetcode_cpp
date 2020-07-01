@@ -79,13 +79,12 @@ public:
     std::vector<std::string> deflatten_data =
       util::string::split<std::vector<std::string>>(skip_bracket, delimiter);
     std::vector<aka::TreeNode<ValueTy>*> nodes;
-    std::transform(
-      deflatten_data.cbegin(),
-      deflatten_data.cend(),
-      std::back_inserter(nodes),
-      [&](const std::string& data) -> aka::TreeNode<ValueTy>* {
-        return Codec::parse_data(data);
-      });
+    std::transform(deflatten_data.cbegin(),
+                   deflatten_data.cend(),
+                   std::back_inserter(nodes),
+                   [&](const std::string& data) -> aka::TreeNode<ValueTy>* {
+                     return Codec::parse_data(data);
+                   });
     std::size_t counter = 0;
     std::size_t left_child = 2 * counter + 1;
     std::size_t right_child = 2 * counter + 2;
